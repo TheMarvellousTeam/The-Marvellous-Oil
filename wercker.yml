@@ -1,24 +1,93 @@
 
-build:
+build-desktop:
 
-    box: openjdk:8
+    box: openjdk:8-alpine
 
     steps:
 
         - script:
-            name: build jar
+            name: build desktop
             code: ./gradlew desktop:dist
-            
+
+build-html:
+
+    box: openjdk:8-alpine
+
+    steps:
+
         - script:
-            name: build web
+            name: build html
             code: ./gradlew html:dist
             
 build-android:
-
-    box: runmymind/docker-android-sdk
+    
+    #this box ship the android sdk 26.0.1
+    box: thyrlian/android-sdk:1.6
 
     steps:
             
         - script:
             name: build android
             code: ./gradlew android:assembleRelease
+
+
+
+
+
+deploy:
+    
+    box: indiehosters/git
+    
+    steps:
+        
+        - script:
+            name: get gh-pages
+            code: |
+                # git clone --branch gh-pages --depth 1 git@$WERCKER_GIT_DOMAIN:$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY.git gh-pages
+                git clone --branch gh-pages --depth 1 https://$WERCKER_GIT_OWNER:$GH_TOKEN@$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY.git gh-pages
+                
+        - script:
+            name: create branch dir
+            code: |
+                mkdir -p ./gh-pages/version/$WERCKER_GIT_BRANCH
+                
+        - script:
+            name: copy html build
+            code: |
+                if [ -d "html/build/dist" ]; then
+                    rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/html || echo 1
+                    mv ./html/build/dist ./gh-pages/version/$WERCKER_GIT_BRANCH/html
+                else
+                    echo "no build found"
+                fi
+                
+        - script:
+            name: copy android build
+            code: |
+                if [ -d "android/build/outputs/apk" ]; then
+                    rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/android || echo 1
+                    mv ./android/build/outputs/apk ./gh-pages/version/$WERCKER_GIT_BRANCH/android
+                else
+                    echo "no build found"
+                fi
+        
+        - script:
+            name: copy desktop build
+            code: |
+                if [ -d "desktop/build/libs" ]; then
+                    rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/desktop || echo 1
+                    mv ./desktop/build/libs ./gh-pages/version/$WERCKER_GIT_BRANCH/desktop
+                else
+                    echo "no build found"
+                fi
+                 
+        - script:
+            name: push
+            cwd: gh-pages
+            code: |
+                git config --global user.email "bot@marvelous.team"
+                git config --global user.name "ana"
+                git add .
+                git commit -m "deploy"
+                git push --set-upstream origin gh-pages
+                 
