@@ -41,53 +41,59 @@ deploy:
     steps:
         
         - script:
-            name: get gh-pages
+            name: get current gh-pages
             code: |
-                # git clone --branch gh-pages --depth 1 git@$WERCKER_GIT_DOMAIN:$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY.git gh-pages
                 git clone --branch gh-pages --depth 1 https://$WERCKER_GIT_OWNER:$GH_TOKEN@$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY.git gh-pages
                 
         - script:
-            name: create branch dir
+            name: copy build
             code: |
                 mkdir -p ./gh-pages/version/$WERCKER_GIT_BRANCH
                 
-        - script:
-            name: copy html build
-            code: |
+                # copy html
                 if [ -d "html/build/dist" ]; then
                     rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/html || echo 1
                     mv ./html/build/dist ./gh-pages/version/$WERCKER_GIT_BRANCH/html
                 else
-                    echo "no build found"
+                    echo "no html build found"
                 fi
                 
-        - script:
-            name: copy android build
-            code: |
+                # copy android
                 if [ -d "android/build/outputs/apk" ]; then
                     rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/android || echo 1
                     mv ./android/build/outputs/apk ./gh-pages/version/$WERCKER_GIT_BRANCH/android
                 else
-                    echo "no build found"
+                    echo "no android build found"
                 fi
         
-        - script:
-            name: copy desktop build
-            code: |
+                # copy desktop 
                 if [ -d "desktop/build/libs" ]; then
                     rm -r ./gh-pages/version/$WERCKER_GIT_BRANCH/desktop || echo 1
                     mv ./desktop/build/libs ./gh-pages/version/$WERCKER_GIT_BRANCH/desktop
                 else
-                    echo "no build found"
+                    echo "no desktop build found"
                 fi
                  
         - script:
             name: push
             cwd: gh-pages
             code: |
+                # config git
                 git config --global user.email "bot@marvelous.team"
                 git config --global user.name "ana"
+            
+                # create new orphan branch
+                git checkout --orphan tmp
+                
+                # remove gh-pages branch
+                git branch -D gh-pages
+                
+                # commit to the new branch
                 git add .
-                git commit -m "deploy"
-                git push --set-upstream origin gh-pages
-                 
+                git commit -m $WERCKER_GIT_COMMIT
+                
+                # rename the new branch
+                git branch -m gh-pages
+                
+                # push
+                git push --force --set-upstream origin gh-pages
