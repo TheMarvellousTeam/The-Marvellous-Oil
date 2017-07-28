@@ -1,0 +1,24 @@
+
+build:
+
+    box: openjdk:8
+
+    steps:
+
+        - script:
+            name: build jar
+            code: ./gradlew desktop:dist
+            
+        - script:
+            name: build web
+            code: ./gradlew html:dist
+            
+build-android:
+
+    box: runmymind/docker-android-sdk
+
+    steps:
+            
+        - script:
+            name: build android
+            code: ./gradlew android:assembleRelease
