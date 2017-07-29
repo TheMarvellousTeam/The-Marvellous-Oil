@@ -1,17 +1,26 @@
+////////////////
+//// math ////
+////////////////
 export type PolarPosition = {
     theta: number,
     r: number,
-
-    placement_cost: number,
-
-    // per day
-    drilling_cost: number,
 }
+
+////////////////
+//// drills ////
+////////////////
 
 // describe the drill properties
 export type DrillClass = {
     velocity: number,
     max_depth: number,
+
+    //// costs //////
+    // initial cost
+    placement_cost: number,
+
+    // per day
+    drilling_cost: number,
 }
 
 // describe the drill state
@@ -44,7 +53,10 @@ export type World = {
     },
 }
 
-/// technologies ///
+//////////////////////
+//// technologies ////
+//////////////////////
+
 export type Technology_Unlock_DrillClass = {
     type: 'drill',
     drillClass: DrillClass,
