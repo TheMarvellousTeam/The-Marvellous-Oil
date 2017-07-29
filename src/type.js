@@ -63,7 +63,11 @@ export type World = {
         position: PolarPosition,
         radius: number,
         oil: number,
+<<<<<<< HEAD
     }],
+=======
+    }[],
+>>>>>>> 837997bdd01fa9e76b73497ad5aeb796a992715b
 }
 
 //////////////////////
