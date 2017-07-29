@@ -33,6 +33,7 @@ export type DrillClass = {
 // describe the drill state
 export type Drill = {
     position: PolarPosition,
+    isDrilling: boolean,
     drillClass: DrillClass,
 }
 
