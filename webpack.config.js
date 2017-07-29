@@ -98,7 +98,7 @@ module.exports = {
 
     devServer: {
         port: 8082,
-        contentBase: [],
+        contentBase: false,
         historyApiFallback: true,
         watchOptions: {
             ignored: /node_modules/,

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { App } from '../component/App'
 
-
-export const init = (store => {
+export const init = store => {
     const render = () =>
         ReactDOM.render(
             <Provider store={store}>
