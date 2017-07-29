@@ -1,0 +1,58 @@
+{
+    "name": "poker",
+    "version": "1.0.0",
+    "dependencies": {
+        "prop-types": "15.5.10",
+        "react": "15.6.1",
+        "react-dom": "15.6.1",
+        "react-motion": " 0.5.0",
+        "react-propstransition": "2.0.4",
+        "react-redux": "5.0.5",
+        "redux": "3.7.1"
+    },
+    "devDependencies": {
+        "@storybook/addon-storyshots": "3.1.8",
+        "@storybook/cli": "3.1.6",
+        "@storybook/react": "3.1.8",
+        "babel-cli": "6.24.1",
+        "babel-loader": "7.1.1",
+        "babel-plugin-add-module-exports": "0.2.1",
+        "babel-plugin-css-modules-transform": "1.2.7",
+        "babel-plugin-transform-assets-import-to-string": "1.0.1",
+        "babel-plugin-transform-async-to-generator": "6.24.1",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "babel-plugin-transform-runtime": "6.23.0",
+        "babel-plugin-transform-string-literal-replace": "1.0.2",
+        "babel-preset-flow": "6.23.0",
+        "babel-preset-react": "6.24.1",
+        "babel-runtime": "6.23.0",
+        "css-loader": "0.28.4",
+        "extract-text-webpack-plugin": "3.0.0",
+        "file-loader": "0.11.2",
+        "flow-bin": "0.49.1",
+        "flow-typed": "2.1.2",
+        "jest": "20.0.4",
+        "prettier": "1.5.2",
+        "raw-loader": "0.5.1",
+        "react-test-renderer": "15.6.1",
+        "style-loader": "0.18.2",
+        "webpack": "3.1.0",
+        "webpack-dev-server": "2.5.1"
+    },
+    "jest": {
+        "verbose": true,
+        "testMatch": ["**/?(*.)(spec|test).js"],
+        "setupFiles": ["./.storybook/storyshots-setup.js"]
+    },
+    "scripts": {
+        "start": "webpack-dev-server --inline --devtool source-map -d",
+        "prettier:test": "prettier --single-quote --trailing-comma es5 --no-semi --tab-width 4 -l \"{scripts,src,type}/**/*.{js,css}\"",
+        "prettier:write": "prettier --single-quote --trailing-comma es5 --no-semi --tab-width 4 --write \"{scripts,src,type}/**/*.{js,css}\"",
+        "flow-typed": "flow-typed install",
+        "test:unit": "env NODE_ENV=test jest --verbose",
+        "test": "npm run test:unit && npm run prettier:test",
+        "storybook": "start-storybook -p 6006",
+        "storybook:build": "env NODE_ENV=production build-storybook",
+        "build": "env NODE_ENV=production webpack && cp node_modules/firebase/firebase-app.js node_modules/firebase/firebase-database.js node_modules/firebase/firebase-storage.js dist/"
+    }
+}
