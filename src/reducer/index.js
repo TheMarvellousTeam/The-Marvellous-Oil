@@ -1,5 +1,6 @@
 import { chainReducer } from '../util/redux'
 import { reduce as reduceGame } from './game'
+import { reduce as reduceGameLoop } from './game.loop'
 
 import type { State } from './type'
 
@@ -8,4 +9,4 @@ export const defaultState: State = {
     game: null,
 }
 
-export const reduce = chainReducer(reduceGame)
+export const reduce = chainReducer(reduceGame, reduceGameLoop)

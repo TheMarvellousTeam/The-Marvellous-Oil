@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { defaultState, reduce } from './reducer'
 
 import { init as initUI } from './sideEffect/ui'
+import { init as initScheduler } from './sideEffect/scheduler'
 
 let store
 {
@@ -27,4 +28,4 @@ let store
     store = createStore(reduce, defaultState, compose(...enhancers))
 }
 
-;[initUI].forEach(init => init(store))
+;[initUI, initScheduler].forEach(init => init(store))

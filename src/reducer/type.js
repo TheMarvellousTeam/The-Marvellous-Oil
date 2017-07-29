@@ -17,6 +17,14 @@ export type Game = {
 
         unlocked: boolean[],
     },
+
+    loop: {
+        // nextTic date
+        nextTic: 0,
+
+        // in tic / s
+        gameSpeed: 1,
+    },
 }
 
 export type State = {
