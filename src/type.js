@@ -2,7 +2,12 @@
 //// math ////
 ////////////////
 export type PolarPosition = {
+    // float in rad
     theta: number,
+
+    // float in [0,1],
+    // where 0 is the center of the world
+    // and 1 is the surface
     r: number,
 }
 
@@ -46,7 +51,12 @@ export type Derrick = {
 // describe the world
 export type World = {
     drills: Drill[],
-    oilPoket: {
+
+    derricks: Derrick[],
+
+    well: Well[],
+
+    oilPockets: {
         position: PolarPosition,
         radius: number,
         oil: number,
