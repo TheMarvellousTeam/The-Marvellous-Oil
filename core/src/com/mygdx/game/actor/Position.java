@@ -1,4 +1,4 @@
-package com.mygdx.game.component;
+package com.mygdx.game.actor;
 
 import com.badlogic.ashley.core.Component;
 
