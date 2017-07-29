@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.item {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    box-shadow: 0 0 2px 0 #333;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+}
+.label {
+}

@@ -17,6 +17,8 @@ export type PolarPosition = {
 
 // describe the drill properties
 export type DrillClass = {
+    name: string,
+
     velocity: number,
     max_depth: number,
 
