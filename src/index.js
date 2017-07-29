@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { defaultState, reduce } from './reducer'
-
+import { start } from './action/game'
 import { init as initUI } from './sideEffect/ui'
 import { init as initScheduler } from './sideEffect/scheduler'
 
@@ -29,3 +29,5 @@ let store
 }
 
 ;[initUI, initScheduler].forEach(init => init(store))
+
+store.dispatch(start())

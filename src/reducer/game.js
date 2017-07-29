@@ -1,9 +1,20 @@
 import { set, merge } from '../util/redux'
+import { create as createWorld } from '../service/game/forgeWorld'
 
 import type { Action, State } from './type'
 import type { Drill } from '../type'
 
 export const reduce = (state: State, action: Action): State => {
+    if (action.type === 'game:start')
+        return set(state, ['game'], {
+            world: createWorld(3),
+            money: 1000,
+            day: 0,
+            state: 'playing',
+            technologies: { available: [], unlocked: [] },
+            loop: { nextTic: 0, gameSpeed: 0.5 },
+        })
+
     if (!state.game) return state
 
     switch (action.type) {
@@ -15,9 +26,9 @@ export const reduce = (state: State, action: Action): State => {
             let updated_wells = game.world.wells || []
 
             updated_drills.forEach((d: Drill) => {
-                if ( d.isDrilling ) {
+                if (d.isDrilling) {
                     d.position.r += d.drillClass.velocity
-                    if ( d.position.r > d.drillClass.max_depth ) {
+                    if (d.position.r > d.drillClass.max_depth) {
                         d.position.r = d.drillClass.max_depth
                         d.isDrilling = false
                     }
@@ -29,14 +40,14 @@ export const reduce = (state: State, action: Action): State => {
                 //      return false and create derrick
                 // else if ( !d.isDrilling && d.position.r== d.drillClass.max_depth )
                 //
-                if ( !d.isDrilling && d.position.r == d.drillClass.max_depth ) {
+                if (!d.isDrilling && d.position.r == d.drillClass.max_depth) {
                     const newWell: Well = {
                         bottom: {
                             theta: d.position.theta,
-                            r: d.position.r
-                        }
+                            r: d.position.r,
+                        },
                     }
-                    updated_wells = [ ...updated_wells, newWell ]
+                    updated_wells = [...updated_wells, newWell]
                     return false
                 } else {
                     return true
@@ -48,14 +59,14 @@ export const reduce = (state: State, action: Action): State => {
 
                 money: game.money - total_cost,
 
-                worlds:{
+                worlds: {
                     ...game.world,
                     drills: updated_drills,
                     derricks: updated_derricks,
-                    wells: updated_wells
-                }
+                    wells: updated_wells,
+                },
             }
-            return {...state, game}
+            return { ...state, game }
         }
         case 'game:drill:place': {
             let game = state.game

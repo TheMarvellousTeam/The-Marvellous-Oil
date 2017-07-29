@@ -7,6 +7,13 @@ export const tic = (): Action_Game_Tic => ({
     type: 'game:tic',
 })
 
+type Action_Game_Start = {
+    type: 'game:start',
+}
+export const start = (): Action_Game_Start => ({
+    type: 'game:start',
+})
+
 type Action_Game_PlaceDrill = {
     type: 'game:drill:place',
     theta: number,
@@ -21,4 +28,7 @@ export const placeDrill = (
     drillClass,
 })
 
-export type Action = Action_Game_PlaceDrill | Action_Game_Tic
+export type Action =
+    | Action_Game_PlaceDrill
+    | Action_Game_Tic
+    | Action_Game_Start
