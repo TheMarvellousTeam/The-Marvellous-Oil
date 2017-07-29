@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { App } from '../component/App'
+import { App } from '../component/App/connected'
 
 export const init = store => {
     const render = () =>
