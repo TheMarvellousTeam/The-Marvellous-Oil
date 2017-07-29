@@ -28,4 +28,13 @@ export const drillClasses: DrillClass[] = [
         placement_cost: 30,
         drilling_cost: 5,
     },
+    {
+        name: 'drill brill 6 c',
+
+        velocity: 1.8,
+        max_depth: 0.9,
+
+        placement_cost: 38,
+        drilling_cost: 8,
+    },
 ]
