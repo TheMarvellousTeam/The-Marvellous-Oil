@@ -23,7 +23,7 @@ export const World = ({
     onPointerMove,
     onClickEntity,
 }: Props) => {
-    const size = Math.min(width, height) * 0.9
+    const size = Math.min(width, height) * 0.74
 
     return (
         <div className={style.container}>

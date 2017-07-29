@@ -17,18 +17,30 @@ export const start = (): Action_Game_Start => ({
 type Action_Game_PlaceDrill = {
     type: 'game:drill:place',
     theta: number,
-    drillClass: DrillClass,
+    drillClassIndex: number,
 }
 export const placeDrill = (
     theta: number,
-    drillClass: DrillClass
+    drillClassIndex: number
 ): Action_Game_PlaceDrill => ({
     type: 'game:drill:place',
     theta,
-    drillClass,
+    drillClassIndex,
+})
+
+type Action_Game_UnlockDrill = {
+    type: 'game:drill:unlock',
+    drillClassIndex: number,
+}
+export const unlockDrill = (
+    drillClassIndex: number
+): Action_Game_UnlockDrill => ({
+    type: 'game:drill:unlock',
+    drillClassIndex,
 })
 
 export type Action =
     | Action_Game_PlaceDrill
     | Action_Game_Tic
     | Action_Game_Start
+    | Action_Game_UnlockDrill

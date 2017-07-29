@@ -1,20 +1,9 @@
 import { set, merge } from '../util/redux'
-import { create as createWorld } from '../service/game/forgeWorld'
 
 import type { Action, State } from './type'
 import type { Drill } from '../type'
 
 export const reduce = (state: State, action: Action): State => {
-    if (action.type === 'game:start')
-        return set(state, ['game'], {
-            world: createWorld(3),
-            money: 1000,
-            day: 0,
-            state: 'playing',
-            technologies: { available: [], unlocked: [] },
-            loop: { nextTic: 0, gameSpeed: 0.5 },
-        })
-
     if (!state.game) return state
 
     switch (action.type) {
@@ -71,33 +60,22 @@ export const reduce = (state: State, action: Action): State => {
         case 'game:drill:place': {
             let game = state.game
 
-            // create the new drill, on the surface
-            const newDrill: Drill = {
-                drillClass: action.drillClass,
-                isDrilling: true,
-                position: {
-                    theta: action.theta,
-                    r: 1,
-                },
-            }
+            const { drillClass } = state.game.technologies.available.filter(
+                x => x.type === 'drill'
+            )[action.drillClassIndex]
+        }
 
-            // copy the game
-            game = {
-                ...game,
+        case 'game:drill:unlock': {
+            let game = state.game
 
-                // withdraw the cost of the drill
-                money: game.money - action.drillClass.drilling_cost,
+            let i = 0
+            let k = action.drillClassIndex
+            state.game.technologies.available.forEach((x, j) => {
+                i = k === 0 ? j : i
+                k = x.type == 'drill' ? k - 1 : k
+            })
 
-                // copy the world
-                worlds: {
-                    ...game.world,
-
-                    // add the drill to the world
-                    drills: [...game.world.drills, newDrill],
-                },
-            }
-
-            return { ...state, game }
+            return set(state, ['game', 'technologies', 'unlocked', i], true)
         }
     }
     return state

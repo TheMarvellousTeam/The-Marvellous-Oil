@@ -9,10 +9,9 @@ export const init = store => {
         const state = store.getState()
 
         if (state.game && state.game.state == 'playing') {
-            setTimeout(
-                () => store.dispatch(tic()),
-                Math.max(state.game.loop.nextTic - Date.now(), 0)
-            )
+            const delta = Math.max(state.game.loop.nextTic - Date.now(), 0)
+
+            timeout = setTimeout(() => store.dispatch(tic()), delta)
         }
     }
 
