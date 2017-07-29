@@ -57,13 +57,13 @@ export type World = {
 
     derricks: Derrick[],
 
-    well: Well[],
+    wells: Well[],
 
     oilPockets: {
         position: PolarPosition,
         radius: number,
         oil: number,
-    },
+    }[],
 }
 
 //////////////////////
