@@ -104,13 +104,24 @@ exports[`Storyshots World default 1`] = `
       }
     >
       <div
+        className="_2047144c"
+        style={
+          Object {
+            "height": 770.0000000000001,
+            "left": -385.00000000000006,
+            "top": -385.00000000000006,
+            "width": 770.0000000000001,
+          }
+        }
+      />
+      <div
         className="_2517da5d"
         style={
           Object {
-            "height": 370,
-            "left": -185,
-            "top": -185,
-            "width": 370,
+            "height": 406,
+            "left": -203,
+            "top": -203,
+            "width": 406,
           }
         }
       >
@@ -121,7 +132,7 @@ exports[`Storyshots World default 1`] = `
         onClick={undefined}
         style={
           Object {
-            "transform": "translate3d(-108.74027167410755px,-149.66814395936527px,0) rotateZ(4.084070449666731rad)",
+            "transform": "translate3d(-102.86241915118282px,-141.57797401561578px,0) rotateZ(4.084070449666731rad)",
           }
         }
       />
@@ -130,7 +141,7 @@ exports[`Storyshots World default 1`] = `
         onClick={undefined}
         style={
           Object {
-            "transform": "translate3d(-57.16814395936522px,175.94545551460342px,0) rotateZ(8.168140899333462rad)",
+            "transform": "translate3d(-54.077974015615744px,166.4348903516519px,0) rotateZ(8.168140899333462rad)",
           }
         }
       />
@@ -139,7 +150,7 @@ exports[`Storyshots World default 1`] = `
         onClick={undefined}
         style={
           Object {
-            "transform": "translate3d(57.168143959365196px,-175.94545551460345px,0) rotateZ(11.309733552923255rad)",
+            "transform": "translate3d(54.07797401561572px,-166.43489035165192px,0) rotateZ(11.309733552923255rad)",
           }
         }
       />
@@ -148,7 +159,7 @@ exports[`Storyshots World default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "transform": "translate3d(-43.49610866964302px,-59.86725758374611px,0) rotateZ(4.084070449666731rad)",
+            "transform": "translate3d(-41.14496766047313px,-56.631189606246316px,0) rotateZ(4.084070449666731rad)",
           }
         }
       />
@@ -157,7 +168,7 @@ exports[`Storyshots World default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "transform": "translate3d(-17.150443187809564px,52.78363665438103px,0) rotateZ(8.168140899333462rad)",
+            "transform": "translate3d(-16.223392204684725px,49.930467105495566px,0) rotateZ(8.168140899333462rad)",
           }
         }
       />

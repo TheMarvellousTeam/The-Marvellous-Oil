@@ -3,6 +3,7 @@ import { defaultState, reduce } from './reducer'
 import { start } from './action/game'
 import { init as initUI } from './sideEffect/ui'
 import { init as initScheduler } from './sideEffect/scheduler'
+import { imageLoader } from './util/imageLoader'
 
 let store
 {
@@ -30,4 +31,10 @@ let store
 
 ;[initUI, initScheduler].forEach(init => init(store))
 
-store.dispatch(start())
+Promise.all(
+    [
+        require('./asset/image/ciel.png'),
+        require('./asset/image/terre.png'),
+        require('./asset/image/surface.png'),
+    ].map(url => imageLoader.load(url))
+).then(() => store.dispatch(start()))

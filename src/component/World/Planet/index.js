@@ -17,6 +17,13 @@ export class Planet extends React.Component {
 
     _timeout: number | null = null
 
+    shouldComponentUpdate(nextProps: Props) {
+        return (
+            nextProps.world !== this.props.world ||
+            nextProps.size !== this.props.size
+        )
+    }
+
     draw = () => {
         if ('undefined' !== typeof cancelAnimationFrame)
             cancelAnimationFrame(this._timeout)
