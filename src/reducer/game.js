@@ -15,42 +15,32 @@ export const reduce = (state: State, action: Action): State => {
 
             let world = state.game.world
 
-            // update drills
-            const drills = world.drills
-                .map(drill => {
+            // update well
+            const wells = world.wells.map((well: Well) => {
+                let drill = well.drill
+                let updatedWell = {
+                    ...well,
+                }
+
+                // drilling case
+                if (drill && drill.isDrilling) {
+                    // drilling cost
                     totalCost += drill.drillClass.drilling_cost
-
-                    if (1 - drill.position.r >= drill.drillClass.max_depth)
-                        return null
-
-                    return {
-                        ...drill,
-                        position: {
-                            ...drill.position,
-                            r: Math.max(
-                                1 - drill.drillClass.max_depth,
-                                drill.position.r - drill.drillClass.velocity
-                            ),
-                        },
+                    // drills
+                    updatedWell.bottom = Math.max(
+                        1 - drill.drillClass.max_depth,
+                        well.bottom - drill.drillClass.velocity
+                    )
+                    // if depth == max_depth delete drill
+                    //TODO add sample
+                    if (updatedWell.bottom == 1 - drill.drillClass.max_depth) {
+                        updatedWell.drill = null
                     }
-                })
-                .filter(Boolean)
+                }
+                // TODO pumping case
 
-            // TODO update well,
-            // match well with their drill with the angle theta
-            // ( because there is no id, and I guess the angle is unique enought )
-            const wells = worlds.wells
-                .map(well => {
-                    let newWell = {
-                        ...well
-                    }
-                    drills.forEach(drill => {
-                        if (drill.position.theta == well.bottom.theta) {
-                            newWell.bottom.r = drill.position.r
-                        }
-                    })
-                    return newWell
-                })
+                return updatedWell
+            })
 
             return {
                 ...state,
@@ -58,15 +48,14 @@ export const reduce = (state: State, action: Action): State => {
                     ...state.game,
                     world: {
                         ...world,
-
-                        drills,
-                        wells
+                        wells,
                     },
                     money: state.game.money - totalCost,
                     day: state.game.day + 1 / 48,
                 },
             }
         }
+
         case 'game:drill:place': {
             let game = state.game
 
@@ -74,13 +63,15 @@ export const reduce = (state: State, action: Action): State => {
                 x => x.type === 'drill'
             )[action.drillClassIndex]
 
-            const newDrill: Drill = {
-                drillClass: drillClass,
-                isDrilling: true,
-                position: {
-                    theta: action.theta,
-                    r: 1,
+            const newWell: Well = {
+                theta: action.theta,
+                bottom: 1,
+                drill: {
+                    drillClass: drillClass,
+                    isDrilling: true,
                 },
+                derrick: null,
+                samples: [],
             }
 
             // copy the game
@@ -88,14 +79,14 @@ export const reduce = (state: State, action: Action): State => {
                 ...game,
 
                 // withdraw the cost of the drill
-                money: game.money - drillClass.drilling_cost,
+                money: game.money - drillClass.placement_cost,
 
                 // copy the world
                 world: {
                     ...game.world,
 
                     // add the drill to the world
-                    drills: [...game.world.drills, newDrill],
+                    wells: [...game.world.wells, newWell],
                 },
             }
 
