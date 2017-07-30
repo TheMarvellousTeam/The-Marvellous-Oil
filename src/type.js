@@ -45,11 +45,6 @@ export type Drill = {
     drillClass: DrillClass,
 }
 
-export type Sample = {
-    r: number,
-    type: number,
-}
-
 // describe a drilled well
 export type Well = {
     // depth of the well
@@ -59,7 +54,7 @@ export type Well = {
     // current derrick,
     derrick: Derrick | null,
     // each place where the drill stopped, revealing a piece of the heatmap
-    samples: Sample[],
+    samples: number[],
 }
 
 export type Derrick = {

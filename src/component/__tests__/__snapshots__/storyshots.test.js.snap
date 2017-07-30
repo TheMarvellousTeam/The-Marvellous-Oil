@@ -122,7 +122,7 @@ exports[`Storyshots World default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "transform": "translate3d(-97.8662445066968px,-134.70132956342874px,0) rotateZ(4.084070449666731rad)",
+            "transform": "translate3d(-43.49610866964302px,-59.86725758374611px,0) rotateZ(4.084070449666731rad)",
           }
         }
       />
@@ -131,7 +131,7 @@ exports[`Storyshots World default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "transform": "translate3d(-51.45132956342869px,158.3509099631431px,0) rotateZ(8.168140899333462rad)",
+            "transform": "translate3d(-17.150443187809564px,52.78363665438103px,0) rotateZ(8.168140899333462rad)",
           }
         }
       />

@@ -9,7 +9,7 @@ const world = {
         {
             bottom: {
                 theta: Math.PI * 1.3,
-                r: 0.9,
+                r: 0.4,
             },
             drill: {
                 isDrilling: true,
@@ -21,23 +21,23 @@ const world = {
         {
             bottom: {
                 theta: Math.PI * 2.6,
-                r: 0.9,
+                r: 0.3,
             },
             drill: {
                 isDrilling: true,
                 drillClass: drillClasses[0],
             },
             derrick: null,
-            samples: [],
+            samples: [0.5],
         },
         {
             bottom: {
                 theta: Math.PI * 3.6,
-                r: 0.9,
+                r: 0.8,
             },
             drill: null,
             derrick: null,
-            samples: [],
+            samples: [0.8],
         },
     ],
     oilPockets: Array.from({ length: 6 }).map((_, i, arr) => ({
