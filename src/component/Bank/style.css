@@ -5,10 +5,13 @@
     align-items: center;
 }
 .bank {
+    min-width: 50px;
+    text-align: right;
 }
-.inFlow {
-}
+.inFlow,
 .outFlow {
+    min-width: 40px;
+    text-align: right;
 }
 .detail {
     margin-left: 10px;
