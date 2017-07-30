@@ -53,7 +53,8 @@ deploy:
                 else
                     # else copy in the version folder
 
-                    mv ../dist/* ./version/$WERCKER_GIT_BRANCH/
+                    rm -r ./version/$WERCKER_GIT_BRANCH
+                    mv ../dist ./version/$WERCKER_GIT_BRANCH
                 fi
 
 
