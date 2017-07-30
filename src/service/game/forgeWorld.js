@@ -9,10 +9,10 @@ const plantPoint = (n: number, limit: number = 0): PolarPosition[] => {
         for (let u = 10; u--; ) {
             const a = toPoint({
                 theta: Math.random() * Math.PI * 2,
-                r: Math.random(),
+                r: Math.random() * 0.5 + 0.2,
             })
 
-            if (arr.every(b => distance(a, b) < limit)) {
+            if (arr.every(b => distance(a, b) > limit)) {
                 arr.push(a)
                 break
             }
