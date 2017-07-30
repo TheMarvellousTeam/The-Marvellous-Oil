@@ -13,8 +13,8 @@ export const drawSediment = (
     ctx.clip()
 
     // prettier-ignore
-    for (let x = size; x--; )
-    for (let y = size; y--; ) {
+    for (let x = Math.ceil(size); x--; )
+    for (let y = Math.ceil(size); y--; ) {
         const wx = x / size * 2 - 1
         const wy = y / size * 2 - 1
 
