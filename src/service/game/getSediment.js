@@ -11,7 +11,7 @@ const TAU = 0.2
 
 const A = 1 / gauss(TAU, 0.01)
 
-export const getSediment = (oilPockets: OilPocket[], size: number, at: Point) =>
+export const getSediment = (oilPockets: OilPocket[], at: Point) =>
     Math.min(
         1,
         A *
