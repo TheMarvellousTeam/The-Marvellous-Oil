@@ -39,9 +39,24 @@ deploy:
 
         - script:
             name: copy build
+            cwd: gh-pages
             code: |
-                mkdir -p ./gh-pages/version
-                mv dist ./gh-pages/version/$WERCKER_GIT_BRANCH
+                mkdir -p ./version/$WERCKER_GIT_BRANCH
+
+                if [ $WERCKER_GIT_BRANCH = "master" ]; then
+                    # special case for master
+                    # copy to the root
+
+                    echo 0 > tmp
+                    find . -type f -not -path './version*' -not -path './.git*' -print0 | xargs -0 rm --
+                    mv ../dist/* .
+                else
+                    # else copy in the version folder
+
+                    rm -r ./version/$WERCKER_GIT_BRANCH
+                    mv ../dist ./version/$WERCKER_GIT_BRANCH
+                fi
+
 
         - script:
             name: push
