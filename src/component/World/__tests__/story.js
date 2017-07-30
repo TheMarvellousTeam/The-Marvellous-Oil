@@ -30,8 +30,24 @@ const world = {
             derrick: null,
             samples: [],
         },
+        {
+            bottom: {
+                theta: Math.PI * 2.6,
+                r: 0.9,
+            },
+            drill: null,
+            derrick: null,
+            samples: [],
+        },
     ],
-    oilPockets: [],
+    oilPockets: Array.from({ length: 6 }).map((_, i, arr) => ({
+        position: {
+            theta: Math.PI * 2 * i / arr.length,
+            r: i / arr.length,
+        },
+        radius: 0.1,
+        oil: 40,
+    })),
 }
 
 storiesOf('World', module).add('default', () =>

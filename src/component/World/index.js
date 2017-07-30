@@ -1,6 +1,7 @@
 import React from 'react'
 import { toPoint, fromPoint } from '../../util/math/pointPolar'
 import { scal } from '../../util/math/point'
+import { Planet } from './Planet'
 import type { World as World_type } from '../../type'
 import type { PointPolar } from '../../util/math/pointPolar'
 
@@ -66,7 +67,17 @@ export const World = ({
                     transform: `translate3d(${width / 2}px,${height / 2}px,0)`,
                 }}
             >
-                <Planet size={size} />
+                <div
+                    className={style.planet}
+                    style={{
+                        width: size,
+                        height: size,
+                        top: -size / 2,
+                        left: -size / 2,
+                    }}
+                >
+                    <Planet size={size} world={world} />
+                </div>
 
                 {world.wells.map((well, i) => {
                     let position = {
@@ -99,11 +110,11 @@ export const World = ({
     )
 }
 
-const Planet = ({ size }) =>
-    <div
-        className={style.planet}
-        style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
-    />
+// const Planet = ({ size }) =>
+//     <div
+//         className={style.planet}
+//         style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
+//     />
 
 const transform = (position: PointPolar, size: number) => {
     const u = scal(toPoint(position), size)
