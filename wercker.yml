@@ -48,7 +48,12 @@ deploy:
                     # copy to the root
 
                     echo 0 > tmp
-                    find . -type f -not -path './version*' -not -path './.git*' -print0 | xargs -0 rm --
+
+                    ls | grep -v "version\|.git" | xargs rm -r
+
+                    # remove all file, fucks up with dir
+                    # find . -type f -not -path './version*' -not -path './.git*' -print0 | xargs -0 rm --
+
                     mv ../dist/* .
                 else
                     # else copy in the version folder
