@@ -1,29 +1,27 @@
-import { getSediment } from '../../../service/game/getSediment'
-import type { OilPocket } from '../../../type'
+import { drawSediment } from './drawSediment'
+import { create as createSpriteMemoize } from './spriteMemoize'
+import type { World as World_type } from '../../type'
 
-export const draw = (
+const getSedimentImage = createSpriteMemoize(drawSediment)
+
+export const drawWorld = (
     ctx: CanvasRenderingContext2D,
-    oilPockets: OilPocket[],
+    world: World_type,
     size: number
 ) => {
-    const getS = getSediment.bind(null, oilPockets, size)
+    // draw the planet core
+    ctx.drawImage(getSedimentImage(world.oilPockets, size), 0, 0)
 
+    // draw the mask
     ctx.save()
 
-    // prettier-ignore
-    for (let x = size; x--; )
-    for (let y = size; y--; ) {
-        const wx = x / size * 2 - 1
-        const wy = y / size * 2 - 1
+    ctx.beginPath()
+    ctx.arc(size / 2, size / 2, size / 3, 0, Math.PI * 2)
+    ctx.clip()
 
-        if (wx * wx + wy * wy < 1) {
-            const s = getS({ x: wx, y: wy, z: 0 })
-
-            ctx.fillStyle = `hsl(${s},80%,50%)`
-
-            ctx.rect(x, y, 1, 1)
-        }
-    }
+    ctx.fillStyle = '#73421a'
+    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2)
+    ctx.fill()
 
     ctx.restore()
 }
