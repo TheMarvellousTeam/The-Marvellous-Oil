@@ -2,6 +2,7 @@ import React from 'react'
 
 import { World } from '../World'
 import { DrillShelf } from '../DrillShelf/connected'
+import { Bank } from '../Bank/connected'
 
 import style from './style.css'
 
@@ -40,5 +41,9 @@ export const Game = ({
 
         <div className={style.drillShelf}>
             <DrillShelf selectDrill={onStartPlaceDrill} />
+        </div>
+
+        <div className={style.bank}>
+            <Bank />
         </div>
     </div>
