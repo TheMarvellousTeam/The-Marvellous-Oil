@@ -3,8 +3,6 @@ import { drawWorld } from './drawWorld'
 import type { World as World_type } from '../../type'
 import type { PointPolar } from '../../util/math/pointPolar'
 
-import style from './style.css'
-
 export type Props = {
     world: World_type,
     size: number,
