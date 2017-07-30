@@ -32,7 +32,7 @@ const world = {
         },
         {
             bottom: {
-                theta: Math.PI * 2.6,
+                theta: Math.PI * 3.6,
                 r: 0.9,
             },
             drill: null,

@@ -91,6 +91,33 @@ exports[`Storyshots World default 1`] = `
         <canvas />
       </div>
       <div
+        className="_00d83cf0"
+        onClick={undefined}
+        style={
+          Object {
+            "transform": "translate3d(-108.74027167410755px,-149.66814395936527px,0) rotateZ(4.084070449666731rad)",
+          }
+        }
+      />
+      <div
+        className="_00d83cf0"
+        onClick={undefined}
+        style={
+          Object {
+            "transform": "translate3d(-57.16814395936522px,175.94545551460342px,0) rotateZ(8.168140899333462rad)",
+          }
+        }
+      />
+      <div
+        className="_00d83cf0"
+        onClick={undefined}
+        style={
+          Object {
+            "transform": "translate3d(57.168143959365196px,-175.94545551460345px,0) rotateZ(11.309733552923255rad)",
+          }
+        }
+      />
+      <div
         className="_4aff70ea"
         onClick={[Function]}
         style={
