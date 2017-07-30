@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Bank default 1`] = `
+<div
+  className="bda52c9f"
+>
+  <div
+    className="bda52c9f"
+    style={
+      Object {
+        "transform": "scale(2,2)",
+      }
+    }
+  >
+    0
+  </div>
+  <div
+    className="_236e4dce"
+  >
+    <div
+      className="cb8c1002"
+    >
+      -10
+    </div>
+    <div
+      className="_498a39a2"
+    >
+      10
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots DrillShelf default 1`] = `
 <div
   className="f810b19f"
