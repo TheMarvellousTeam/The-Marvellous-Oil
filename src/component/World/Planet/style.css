@@ -10,7 +10,9 @@
 }
 .planet {
     position: absolute;
+    background-color: #c2143a;
     border-radius: 50%;
+    position: absolute;
 }
 .drill {
     position: absolute;

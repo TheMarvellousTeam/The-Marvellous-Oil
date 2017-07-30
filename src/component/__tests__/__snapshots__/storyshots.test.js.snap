@@ -87,7 +87,9 @@ exports[`Storyshots World default 1`] = `
             "width": 370,
           }
         }
-      />
+      >
+        <canvas />
+      </div>
       <div
         className="_4aff70ea"
         onClick={[Function]}
