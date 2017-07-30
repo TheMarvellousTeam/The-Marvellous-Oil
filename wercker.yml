@@ -1,0 +1,68 @@
+
+build:
+
+    box: node:8.1
+
+    steps:
+
+        - script:
+            name: install dependencies
+            code: |
+                npm install -g yarn --silent
+                export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+                HOME=$YARN_CACHE yarn --pure-lockfile
+
+        - script:
+            name: test
+            code: yarn run test
+
+        - script:
+            name: build
+            code: yarn run build
+
+        - script:
+            name: build storybook
+            code: |
+                yarn run storybook:build
+                mv storybook-static dist/storybook
+
+deploy:
+
+    box: indiehosters/git
+
+    steps:
+
+        - script:
+            name: get current gh-pages
+            code: |
+                git clone --branch gh-pages --depth 1 https://$WERCKER_GIT_OWNER:$GH_TOKEN@$WERCKER_GIT_DOMAIN/$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY.git gh-pages
+
+        - script:
+            name: copy build
+            code: |
+                mkdir -p ./gh-pages/version
+                mv dist ./gh-pages/version/$WERCKER_GIT_BRANCH
+
+        - script:
+            name: push
+            cwd: gh-pages
+            code: |
+                # config git
+                git config --global user.email "bot@marvelous.team"
+                git config --global user.name "ana"
+
+                # create new orphan branch
+                git checkout --orphan tmp
+
+                # remove gh-pages branch
+                git branch -D gh-pages
+
+                # commit to the new branch
+                git add .
+                git commit -m $WERCKER_GIT_COMMIT
+
+                # rename the new branch
+                git branch -m gh-pages
+
+                # push
+                git push --force --set-upstream origin gh-pages
