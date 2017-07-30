@@ -39,6 +39,18 @@ export const reduce = (state: State, action: Action): State => {
             // TODO update well,
             // match well with their drill with the angle theta
             // ( because there is no id, and I guess the angle is unique enought )
+            const wells = worlds.wells
+                .map(well => {
+                    let newWell = {
+                        ...well
+                    }
+                    drills.forEach(drill => {
+                        if (drill.position.theta == well.bottom.theta) {
+                            newWell.bottom.r = drill.position.r
+                        }
+                    })
+                    return newWell
+                })
 
             return {
                 ...state,
@@ -48,6 +60,7 @@ export const reduce = (state: State, action: Action): State => {
                         ...world,
 
                         drills,
+                        wells
                     },
                     money: state.game.money - totalCost,
                     day: state.game.day + 1 / 48,

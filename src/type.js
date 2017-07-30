@@ -42,6 +42,8 @@ export type Well = {
     // position of the bottom
     // ( position on surface can be deduced with theta )
     bottom: PolarPosition,
+    // each place where the drill stopped, revealing a piece of the heatmap
+    view: PolarPosition,
 }
 
 export type Derrick = {
