@@ -1,9 +1,12 @@
 import React from 'react'
 import { drawSediment } from './drawSediment'
+import { create as createSpriteMemoize } from './spriteMemoize'
 import type { World as World_type } from '../../type'
 import type { PointPolar } from '../../util/math/pointPolar'
 
 import style from './style.css'
+
+const draw = createSpriteMemoize(drawSediment)
 
 export type Props = {
     world: World_type,
@@ -26,7 +29,10 @@ export class Planet extends React.Component {
         this._canvas.width = this.props.size
         this._canvas.height = this.props.size
         const ctx = this._canvas.getContext('2d')
-        drawSediment(ctx, this.props.world.oilPockets, this.props.size)
+
+        const image = draw(this.props.world.oilPockets, this.props.size)
+
+        ctx.drawImage(image, 0, 0)
     }
 
     componentWillUnmount() {
