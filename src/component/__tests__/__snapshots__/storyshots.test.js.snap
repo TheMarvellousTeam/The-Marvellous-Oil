@@ -5,27 +5,22 @@ exports[`Storyshots Bank default 1`] = `
   className="bda52c9f"
 >
   <div
-    className="bda52c9f"
-    style={
-      Object {
-        "transform": "scale(2,2)",
-      }
-    }
+    className="_231a0d21"
   >
-    0
+    900
   </div>
   <div
     className="_236e4dce"
   >
     <div
-      className="cb8c1002"
-    >
-      -10
-    </div>
-    <div
       className="_498a39a2"
     >
       10
+    </div>
+    <div
+      className="cb8c1002"
+    >
+      -10
     </div>
   </div>
 </div>
