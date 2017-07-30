@@ -102,7 +102,7 @@ exports[`Storyshots World default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "transform": "translate3d(-34.30088637561913px,105.56727330876205px,0) rotateZ(8.168140899333462rad)",
+            "transform": "translate3d(-51.45132956342869px,158.3509099631431px,0) rotateZ(8.168140899333462rad)",
           }
         }
       />

@@ -5,24 +5,32 @@ import { World } from '../index'
 import { drillClasses } from '../../../asset/data/drillClasses'
 
 const world = {
-    wells: [],
-    drills: [
+    wells: [
         {
-            position: {
+            bottom: {
                 theta: Math.PI * 1.3,
                 r: 0.9,
             },
-            drillClass: drillClasses[0],
+            drill: {
+                isDrilling: true,
+                drillClass: drillClasses[0],
+            },
+            derrick: null,
+            samples: [],
         },
         {
-            position: {
+            bottom: {
                 theta: Math.PI * 2.6,
-                r: 0.6,
+                r: 0.9,
             },
-            drillClass: drillClasses[0],
+            drill: {
+                isDrilling: true,
+                drillClass: drillClasses[0],
+            },
+            derrick: null,
+            samples: [],
         },
     ],
-    derricks: [],
     oilPockets: [],
 }
 
