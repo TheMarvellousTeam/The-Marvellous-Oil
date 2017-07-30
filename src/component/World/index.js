@@ -68,22 +68,31 @@ export const World = ({
             >
                 <Planet size={size} />
 
-                {world.wells.map(
-                    (well, i) =>
-                        well.drill &&
-                        <Drill
+                {world.wells.map((well, i) => {
+                    let position = {
+                        theta: well.bottom.theta,
+                        r: 1,
+                    }
+                    return (
+                        <Well
                             key={well.bottom.theta}
-                            position={well.bottom}
                             size={size}
-                            onClick={e =>
-                                onPointerClick(
-                                    getPointer(width, height, size, e),
-                                    {
-                                        type: 'drill',
-                                        index: i,
-                                    }
-                                )}
+                            position={position}
                         />
+                    )
+                })}
+
+                {world.wells.filter(well => well.drill).map((well, i) =>
+                    <Drill
+                        key={well.bottom.theta}
+                        position={well.bottom}
+                        size={size}
+                        onClick={e =>
+                            onPointerClick(getPointer(width, height, size, e), {
+                                type: 'drill',
+                                index: i,
+                            })}
+                    />
                 )}
             </div>
         </div>
@@ -100,6 +109,13 @@ const transform = (position: PointPolar, size: number) => {
     const u = scal(toPoint(position), size)
     return `translate3d(${u.x}px,${u.y}px,${0}) rotateZ(${position.theta}rad)`
 }
+
+const Well = ({ size, position, onClick }) =>
+    <div
+        onClick={onClick}
+        className={style.well}
+        style={{ transform: transform(position, size / 2) }}
+    />
 
 const Drill = ({ size, position, onClick }) =>
     <div

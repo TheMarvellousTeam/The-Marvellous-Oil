@@ -24,3 +24,11 @@
     border-radius: 50% 0 0 50%;
     transition: transform 300ms linear;
 }
+.well {
+    position: absolute;
+    top: -15px;
+    left: -12px;
+    width: 24px;
+    height: 15px;
+    background-color: #000000;
+}
