@@ -33,7 +33,7 @@ storiesOf('World', module).add('default', () =>
             height={500}
             world={world}
             onPointerMove={action('onPointerMove')}
-            onClickEntity={action('onClickEntity')}
+            onPointerClick={action('onPointerClick')}
         />
     </div>
 )

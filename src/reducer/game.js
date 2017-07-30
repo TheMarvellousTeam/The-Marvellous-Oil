@@ -1,61 +1,58 @@
 import { set, merge } from '../util/redux'
 
 import type { Action, State } from './type'
-import type { Drill } from '../type'
+import type { Drill, Well } from '../type'
 
 export const reduce = (state: State, action: Action): State => {
     if (!state.game) return state
 
     switch (action.type) {
         case 'game:tic': {
-            let game = state.game
-            let total_cost = 0
-            let updated_derricks = game.world.derricks || []
-            let updated_drills = game.world.drills || []
-            let updated_wells = game.world.wells || []
+            let totalCost = 0
 
-            updated_drills.forEach((d: Drill) => {
-                if (d.isDrilling) {
-                    d.position.r += d.drillClass.velocity
-                    if (d.position.r > d.drillClass.max_depth) {
-                        d.position.r = d.drillClass.max_depth
-                        d.isDrilling = false
-                    }
-                    total_cost += d.drillClass.drilling_cost
-                }
-            })
-            updated_drills.filter((d: Drill) => {
-                // if touching oilPocket
-                //      return false and create derrick
-                // else if ( !d.isDrilling && d.position.r== d.drillClass.max_depth )
-                //
-                if (!d.isDrilling && d.position.r == d.drillClass.max_depth) {
-                    const newWell: Well = {
-                        bottom: {
-                            theta: d.position.theta,
-                            r: d.position.r,
+            // fix cost
+            totalCost += 1
+
+            let world = state.game.world
+
+            // update drills
+            const drills = world.drills
+                .map(drill => {
+                    totalCost += drill.drillClass.drilling_cost
+
+                    if (1 - drill.position.r >= drill.drillClass.max_depth)
+                        return null
+
+                    return {
+                        ...drill,
+                        position: {
+                            ...drill.position,
+                            r: Math.max(
+                                1 - drill.drillClass.max_depth,
+                                drill.position.r - drill.drillClass.velocity
+                            ),
                         },
                     }
-                    updated_wells = [...updated_wells, newWell]
-                    return false
-                } else {
-                    return true
-                }
-            })
+                })
+                .filter(Boolean)
 
-            game = {
-                ...game,
+            // TODO update well,
+            // match well with their drill with the angle theta
+            // ( because there is no id, and I guess the angle is unique enought )
 
-                money: game.money - total_cost,
+            return {
+                ...state,
+                game: {
+                    ...state.game,
+                    world: {
+                        ...world,
 
-                worlds: {
-                    ...game.world,
-                    drills: updated_drills,
-                    derricks: updated_derricks,
-                    wells: updated_wells,
+                        drills,
+                    },
+                    money: state.game.money - totalCost,
+                    day: state.game.day + 1 / 48,
                 },
             }
-            return { ...state, game }
         }
         case 'game:drill:place': {
             let game = state.game
@@ -63,6 +60,33 @@ export const reduce = (state: State, action: Action): State => {
             const { drillClass } = state.game.technologies.available.filter(
                 x => x.type === 'drill'
             )[action.drillClassIndex]
+
+            const newDrill: Drill = {
+                drillClass: drillClass,
+                isDrilling: true,
+                position: {
+                    theta: action.theta,
+                    r: 1,
+                },
+            }
+
+            // copy the game
+            game = {
+                ...game,
+
+                // withdraw the cost of the drill
+                money: game.money - drillClass.drilling_cost,
+
+                // copy the world
+                world: {
+                    ...game.world,
+
+                    // add the drill to the world
+                    drills: [...game.world.drills, newDrill],
+                },
+            }
+
+            return { ...state, game }
         }
 
         case 'game:drill:unlock': {

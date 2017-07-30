@@ -4,7 +4,7 @@ export const drillClasses: DrillClass[] = [
     {
         name: 'drill de merde',
 
-        velocity: 1,
+        velocity: 0.04,
         max_depth: 0.5,
 
         placement_cost: 10,
@@ -13,7 +13,7 @@ export const drillClasses: DrillClass[] = [
     {
         name: 'drill de con',
 
-        velocity: 1,
+        velocity: 0.04,
         max_depth: 0.6,
 
         placement_cost: 20,
@@ -22,7 +22,7 @@ export const drillClasses: DrillClass[] = [
     {
         name: 'drill de luxe',
 
-        velocity: 1.6,
+        velocity: 0.14,
         max_depth: 0.6,
 
         placement_cost: 30,
@@ -31,7 +31,7 @@ export const drillClasses: DrillClass[] = [
     {
         name: 'drill brill 6 c',
 
-        velocity: 1.8,
+        velocity: 0.04,
         max_depth: 0.9,
 
         placement_cost: 38,

@@ -11,13 +11,34 @@ export type Props = {
     game: Game_type,
     width: number,
     height: number,
+    ghostDrill: *,
+
+    onStartPlaceDrill: () => void,
+    onPointerClick: () => void,
+    onPointerMove: () => void,
 }
 
-export const Game = ({ game, width, height }: Props) =>
+export const Game = ({
+    game,
+    width,
+    height,
+    ghostDrill,
+
+    onPointerClick,
+    onPointerMove,
+    onStartPlaceDrill,
+}: Props) =>
     <div className={style.container}>
-        <World world={game.world} width={width} height={height} />
+        <World
+            world={game.world}
+            width={width}
+            height={height}
+            ghostDrill={ghostDrill}
+            onPointerMove={onPointerMove}
+            onPointerClick={onPointerClick}
+        />
 
         <div className={style.drillShelf}>
-            <DrillShelf />
+            <DrillShelf selectDrill={onStartPlaceDrill} />
         </div>
     </div>
