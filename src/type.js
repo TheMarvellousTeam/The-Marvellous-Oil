@@ -30,40 +30,55 @@ export type DrillClass = {
     drilling_cost: number,
 }
 
+export type DerrickClass = {
+    name: string,
+
+    inflow: number,
+
+    placement_cost: number,
+    pumping_cost: number,
+}
+
 // describe the drill state
 export type Drill = {
-    position: PolarPosition,
     isDrilling: boolean,
     drillClass: DrillClass,
 }
 
+export type Sample = {
+    r: number,
+    type: number,
+}
+
 // describe a drilled well
 export type Well = {
-    // position of the bottom
-    // ( position on surface can be deduced with theta )
+    // depth of the well
     bottom: PolarPosition,
+    // current drill,
+    drill: Drill | null,
+    // current derrick,
+    derrick: Derrick | null,
+    // each place where the drill stopped, revealing a piece of the heatmap
+    samples: Sample[],
 }
 
 export type Derrick = {
-    theta: number,
-
     // index to the pomped oil pocket
     oilPocket: number,
+    derrickClass: DerrickClass,
+}
+
+export type OilPocket = {
+    position: PolarPosition,
+    radius: number,
+    oil: number,
 }
 
 // describe the world
 export type World = {
-    drills: Drill[],
-
-    derricks: Derrick[],
-
     wells: Well[],
 
-    oilPockets: {
-        position: PolarPosition,
-        radius: number,
-        oil: number,
-    }[],
+    oilPockets: OilPocket[],
 }
 
 //////////////////////
