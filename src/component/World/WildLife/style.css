@@ -1,0 +1,33 @@
+.container {
+}
+.bernie,
+.camel,
+.pinguin {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center bottom;
+}
+
+.pinguin {
+    background-image: url(../../../asset/image/petitpingouin.png);
+    width: 38px;
+    height: 50px;
+    bottom: 0px;
+    left: -19px;
+}
+.bernie {
+    background-image: url(../../../asset/image/petitebernie.png);
+    width: 55px;
+    height: 42px;
+    bottom: 0px;
+    left: -27.5px;
+}
+.camel {
+    background-image: url(../../../asset/image/petitchameau.png);
+    width: 90px;
+    height: 90px;
+    bottom: 2px;
+    left: -45px;
+}

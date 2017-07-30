@@ -2,6 +2,7 @@ import React from 'react'
 import { toPoint, fromPoint } from '../../util/math/pointPolar'
 import { scal } from '../../util/math/point'
 import { Planet } from './Planet'
+import { WildLife } from './WildLife/loop'
 import type { World as World_type } from '../../type'
 import type { PointPolar } from '../../util/math/pointPolar'
 
@@ -52,7 +53,7 @@ export const World = ({
     onPointerClick,
 }: Props) => {
     const size = Math.min(width, height) * 0.7
-    const planet_size = size * 1.16
+    const planet_size = size * 1.2
 
     return (
         <div
@@ -80,6 +81,10 @@ export const World = ({
                     }}
                 >
                     <Planet size={planet_size} world={world} />
+                </div>
+
+                <div className={style.wildLife}>
+                    <WildLife size={size} />
                 </div>
 
                 {world.wells.map((well, i) => {

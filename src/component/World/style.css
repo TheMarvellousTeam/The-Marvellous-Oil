@@ -8,6 +8,11 @@
 }
 .center {
 }
+.wildLife {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
 .planet {
     position: absolute;
     border-radius: 50%;
