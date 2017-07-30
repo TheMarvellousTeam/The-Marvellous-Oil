@@ -52,14 +52,12 @@ export type Sample = {
 
 // describe a drilled well
 export type Well = {
-    // position of the well
-    theta: number,
-    // deepness of the well
-    bottom: number,
+    // depth of the well
+    bottom: PolarPosition,
     // current drill,
-    drill: Drill,
+    drill: Drill | null,
     // current derrick,
-    derrick: Derrick,
+    derrick: Derrick | null,
     // each place where the drill stopped, revealing a piece of the heatmap
     samples: Sample[],
 }

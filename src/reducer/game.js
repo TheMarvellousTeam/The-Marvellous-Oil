@@ -27,13 +27,16 @@ export const reduce = (state: State, action: Action): State => {
                     // drilling cost
                     totalCost += drill.drillClass.drilling_cost
                     // drills
-                    updatedWell.bottom = Math.max(
+                    updatedWell.bottom.r = Math.max(
                         1 - drill.drillClass.max_depth,
-                        well.bottom - drill.drillClass.velocity
+                        well.bottom.r - drill.drillClass.velocity
                     )
                     // if depth == max_depth delete drill
                     //TODO add sample
-                    if (updatedWell.bottom == 1 - drill.drillClass.max_depth) {
+                    if (
+                        updatedWell.bottom.r ==
+                        1 - drill.drillClass.max_depth
+                    ) {
                         updatedWell.drill = null
                     }
                 }
@@ -64,8 +67,10 @@ export const reduce = (state: State, action: Action): State => {
             )[action.drillClassIndex]
 
             const newWell: Well = {
-                theta: action.theta,
-                bottom: 1,
+                bottom: {
+                    theta: action.theta,
+                    r: 1,
+                },
                 drill: {
                     drillClass: drillClass,
                     isDrilling: true,

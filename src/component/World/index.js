@@ -68,17 +68,22 @@ export const World = ({
             >
                 <Planet size={size} />
 
-                {world.drills.map((drill, i) =>
-                    <Drill
-                        key={drill.position.theta}
-                        {...drill}
-                        size={size}
-                        onClick={e =>
-                            onPointerClick(getPointer(width, height, size, e), {
-                                type: 'drill',
-                                index: i,
-                            })}
-                    />
+                {world.wells.map(
+                    (well, i) =>
+                        well.drill &&
+                        <Drill
+                            key={well.bottom.theta}
+                            position={well.bottom}
+                            size={size}
+                            onClick={e =>
+                                onPointerClick(
+                                    getPointer(width, height, size, e),
+                                    {
+                                        type: 'drill',
+                                        index: i,
+                                    }
+                                )}
+                        />
                 )}
             </div>
         </div>
