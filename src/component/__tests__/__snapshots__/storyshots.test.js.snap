@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DrillShelf default 1`] = `
+<div
+  className="f810b19f"
+>
+  <div
+    className="_2b3f086a"
+    onClick={[Function]}
+  >
+    <div
+      className="_9764efd4"
+    >
+      drill de merde
+    </div>
+    
+  </div>
+  <div
+    className="_2b3f086a"
+    onClick={[Function]}
+  >
+    <div
+      className="_9764efd4"
+    >
+      drill de con
+    </div>
+    [locked]
+  </div>
+  <div
+    className="_2b3f086a"
+    onClick={[Function]}
+  >
+    <div
+      className="_9764efd4"
+    >
+      drill de luxe
+    </div>
+    
+  </div>
+  <div
+    className="_2b3f086a"
+    onClick={[Function]}
+  >
+    <div
+      className="_9764efd4"
+    >
+      drill brill 6 c
+    </div>
+    [locked]
+  </div>
+</div>
+`;
+
+exports[`Storyshots World default 1`] = `
+<div
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="c781be0c"
+    onClick={[Function]}
+    onMouseMove={[Function]}
+    onTouchMove={[Function]}
+  >
+    <div
+      className="_5f9c75cb"
+      style={
+        Object {
+          "transform": "translate3d(300px,250px,0)",
+        }
+      }
+    >
+      <div
+        className="_2517da5d"
+        style={
+          Object {
+            "height": 370,
+            "left": -185,
+            "top": -185,
+            "width": 370,
+          }
+        }
+      />
+      <div
+        className="_4aff70ea"
+        onClick={[Function]}
+        style={
+          Object {
+            "transform": "translate3d(-97.8662445066968px,-134.70132956342874px,0) rotateZ(4.084070449666731rad)",
+          }
+        }
+      />
+      <div
+        className="_4aff70ea"
+        onClick={[Function]}
+        style={
+          Object {
+            "transform": "translate3d(-34.30088637561913px,105.56727330876205px,0) rotateZ(8.168140899333462rad)",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

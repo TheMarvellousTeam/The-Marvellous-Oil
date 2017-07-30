@@ -54,6 +54,6 @@
         "test": "npm run test:unit && npm run prettier:test",
         "storybook": "start-storybook -p 6006",
         "storybook:build": "env NODE_ENV=production build-storybook",
-        "build": "env NODE_ENV=production webpack && cp node_modules/firebase/firebase-app.js node_modules/firebase/firebase-database.js node_modules/firebase/firebase-storage.js dist/"
+        "build": "env NODE_ENV=production webpack"
     }
 }
