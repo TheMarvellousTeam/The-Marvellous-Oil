@@ -42,8 +42,12 @@
     },
     "jest": {
         "verbose": true,
-        "testMatch": ["**/?(*.)(spec|test).js"],
-        "setupFiles": ["./.storybook/storyshots-setup.js"]
+        "testMatch": [
+            "**/?(*.)(spec|test).js"
+        ],
+        "setupFiles": [
+            "./.storybook/storyshots-setup.js"
+        ]
     },
     "scripts": {
         "start": "webpack-dev-server --inline --devtool source-map -d",
