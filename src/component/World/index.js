@@ -51,7 +51,8 @@ export const World = ({
     onPointerMove,
     onPointerClick,
 }: Props) => {
-    const size = Math.min(width, height) * 0.74
+    const size = Math.min(width, height) * 0.7
+    const planet_size = size * 1.16
 
     return (
         <div
@@ -67,16 +68,18 @@ export const World = ({
                     transform: `translate3d(${width / 2}px,${height / 2}px,0)`,
                 }}
             >
+                <Sky size={size * 2.2} />
+
                 <div
                     className={style.planet}
                     style={{
-                        width: size,
-                        height: size,
-                        top: -size / 2,
-                        left: -size / 2,
+                        width: planet_size,
+                        height: planet_size,
+                        top: -planet_size / 2,
+                        left: -planet_size / 2,
                     }}
                 >
-                    <Planet size={size} world={world} />
+                    <Planet size={planet_size} world={world} />
                 </div>
 
                 {world.wells.map((well, i) => {
@@ -110,11 +113,11 @@ export const World = ({
     )
 }
 
-// const Planet = ({ size }) =>
-//     <div
-//         className={style.planet}
-//         style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
-//     />
+const Sky = ({ size }) =>
+    <div
+        className={style.sky}
+        style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
+    />
 
 const transform = (position: PointPolar, size: number) => {
     const u = scal(toPoint(position), size)
