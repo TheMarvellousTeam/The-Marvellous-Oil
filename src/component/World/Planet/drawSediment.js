@@ -1,5 +1,6 @@
 import { getSediment } from '../../../service/game/getSediment'
 import { imageLoader } from '../../../util/imageLoader'
+import { toPoint } from '../../../util/math/pointPolar'
 import * as param from '../../../config/world'
 
 import type { OilPocket } from '../../../type'
@@ -117,10 +118,28 @@ export const drawSediment = (
             }
         })
 
+    // draw bottom layer
     const texture = imageLoader.syncGet(
         PATCHES_TEXTURE_URL[PATCHES_TEXTURE_URL.length - 1]
     )
     if (texture) ctx.drawImage(texture, 0, 0, size, size)
+
+    // draw oilPockets
+    ctx.globalCompositeOperation = 'source-over'
+    oilPockets.forEach(oilPocket => {
+        const o = toPoint(oilPocket.position)
+        ctx.fillStyle = '#333'
+        ctx.filter = `blur(${BLUR / 3}px)`
+        ctx.beginPath()
+        ctx.arc(
+            o.x * size / 2 + size / 2,
+            o.y * size / 2 + size / 2,
+            oilPocket.radius * size / 2,
+            0,
+            Math.PI * 2
+        )
+        ctx.fill()
+    })
 
     ctx.restore()
 }
