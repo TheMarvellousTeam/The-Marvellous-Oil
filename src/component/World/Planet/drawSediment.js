@@ -1,5 +1,6 @@
 import { getSediment } from '../../../service/game/getSediment'
 import { imageLoader } from '../../../util/imageLoader'
+import * as param from '../../../config/world'
 
 import type { OilPocket } from '../../../type'
 
@@ -14,14 +15,19 @@ const URL_TEXTURE_GREEN = require('../../../asset/image/textureverte.png')
     URL_TEXTURE_GREEN,
 ].map(imageLoader.load)
 
-const PATCHES = [0.25, 0.34, 0.6, 0.8]
+const PATCHES = [...param.sediment_quantum_break, 1]
 const PATCHES_TEXTURE_URL = [
     URL_TEXTURE_GREY,
     URL_TEXTURE_WHITE,
     URL_TEXTURE_YELLOW,
     URL_TEXTURE_GREEN,
-]
-const BLUR = 6
+    URL_TEXTURE_GREY,
+    URL_TEXTURE_WHITE,
+    URL_TEXTURE_YELLOW,
+    URL_TEXTURE_GREEN,
+].slice(0, PATCHES.length)
+
+const BLUR = param.sediment_blur
 const UPSCALE = 2
 
 const generateSedimentPatch = (oilPockets, size) => {
