@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { World } from '../World'
+import { GameSpeedSlider } from '../GameSpeedSlider/connected'
 import { DrillShelf } from '../DrillShelf/connected'
 import { Bank } from '../Bank/connected'
 
@@ -45,5 +46,9 @@ export const Game = ({
 
         <div className={style.bank}>
             <Bank />
+        </div>
+
+        <div className={style.gameSpeedSlider}>
+            <GameSpeedSlider />
         </div>
     </div>
