@@ -10,9 +10,10 @@ const getSedimentImage = createSpriteMemoize(drawSediment)
 
 const URL_TERRE = require('../../../asset/image/terre.png')
 const URL_SURFACE = require('../../../asset/image/surface.png')
+;[URL_TERRE, URL_SURFACE].map(imageLoader.load)
 
-imageLoader.load(URL_TERRE)
-imageLoader.load(URL_SURFACE)
+const DEBUG =
+    typeof location !== 'undefined' && location.search.includes('cheat')
 
 export const drawWorld = (
     ctx: CanvasRenderingContext2D,
@@ -56,7 +57,7 @@ export const drawWorld = (
     })
 
     // draw the planet core
-    ctx.globalCompositeOperation = 'source-in'
+    ctx.globalCompositeOperation = DEBUG ? 'source-over' : 'source-in'
     ctx.drawImage(
         getSedimentImage(world.oilPockets, size),
         -size / 2,

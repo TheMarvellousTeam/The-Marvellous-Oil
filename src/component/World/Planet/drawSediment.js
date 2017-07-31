@@ -1,7 +1,28 @@
 import { getSediment } from '../../../service/game/getSediment'
+import { imageLoader } from '../../../util/imageLoader'
+
 import type { OilPocket } from '../../../type'
 
-const PATCHES = [0.3, 0.5, 0.6, 0.8, 0.9]
+const URL_TEXTURE_GREY = require('../../../asset/image/texturegrise.png')
+const URL_TEXTURE_WHITE = require('../../../asset/image/textureblanche.png')
+const URL_TEXTURE_YELLOW = require('../../../asset/image/texturejaune.png')
+const URL_TEXTURE_GREEN = require('../../../asset/image/textureverte.png')
+;[
+    URL_TEXTURE_GREY,
+    URL_TEXTURE_WHITE,
+    URL_TEXTURE_YELLOW,
+    URL_TEXTURE_GREEN,
+].map(imageLoader.load)
+
+const PATCHES = [0.25, 0.34, 0.6, 0.8]
+const PATCHES_TEXTURE_URL = [
+    URL_TEXTURE_GREY,
+    URL_TEXTURE_WHITE,
+    URL_TEXTURE_YELLOW,
+    URL_TEXTURE_GREEN,
+]
+const BLUR = 6
+const UPSCALE = 2
 
 const generateSedimentPatch = (oilPockets, size) => {
     const s = Math.ceil(size)
@@ -60,8 +81,6 @@ export const drawSediment = (
     oilPockets: OilPocket[],
     size: number
 ) => {
-    const upscale = 2
-
     const buffer = document.createElement('canvas')
     buffer.width = buffer.height = size
     const bufferCtx = buffer.getContext('2d')
@@ -74,28 +93,28 @@ export const drawSediment = (
 
     ctx.globalCompositeOperation = 'destination-over'
 
-    generateSedimentPatch(oilPockets, size / upscale)
+    generateSedimentPatch(oilPockets, size / UPSCALE)
         .reverse()
         .slice(0, -1)
         .forEach((patch, i) => {
             bufferCtx.globalCompositeOperation = 'source-over'
-            bufferCtx.filter = `blur(${4}px)`
+            bufferCtx.filter = `blur(${BLUR}px)`
             bufferCtx.drawImage(patch, 0, 0, size, size)
 
-            bufferCtx.globalCompositeOperation = 'source-in'
-            bufferCtx.filter = ''
-            bufferCtx.beginPath()
-            bufferCtx.rect(0, 0, size, size)
-            bufferCtx.fillStyle = `hsl(${i * 34 + 45},68%,60%)`
-            bufferCtx.fill()
+            const texture = imageLoader.syncGet(PATCHES_TEXTURE_URL[i])
+            if (texture) {
+                bufferCtx.globalCompositeOperation = 'source-in'
+                bufferCtx.filter = 'blur(0)'
+                bufferCtx.drawImage(texture, 0, 0, size, size)
 
-            ctx.drawImage(buffer, 0, 0)
+                ctx.drawImage(buffer, 0, 0)
+            }
         })
 
-    ctx.beginPath()
-    ctx.rect(0, 0, size, size)
-    ctx.fillStyle = `hsl(${PATCHES.length * 34 + 45},68%,60%)`
-    ctx.fill()
+    const texture = imageLoader.syncGet(
+        PATCHES_TEXTURE_URL[PATCHES_TEXTURE_URL.length - 1]
+    )
+    if (texture) ctx.drawImage(texture, 0, 0, size, size)
 
     ctx.restore()
 }

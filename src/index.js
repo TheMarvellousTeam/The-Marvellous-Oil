@@ -36,5 +36,9 @@ Promise.all(
         require('./asset/image/ciel.png'),
         require('./asset/image/terre.png'),
         require('./asset/image/surface.png'),
+        require('./asset/image/textureblanche.png'),
+        require('./asset/image/texturegrise.png'),
+        require('./asset/image/texturejaune.png'),
+        require('./asset/image/textureverte.png'),
     ].map(url => imageLoader.load(url))
 ).then(() => store.dispatch(start()))
