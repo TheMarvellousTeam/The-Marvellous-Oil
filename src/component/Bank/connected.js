@@ -12,9 +12,11 @@ const mapStateToProps = state => {
     )
 
     return {
-        inFlow: 0,
-        outFlow: drill_cost,
-        bank: state.game.money,
+        inFlow: state.game.bank.inflow,
+        outFlow: state.game.bank.outflow,
+        bank: state.game.bank.money,
+        value: state.game.bank.valueOil,
+        change: state.game.bank.deltaOil,
     }
 }
 

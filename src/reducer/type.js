@@ -1,4 +1,4 @@
-import type { World, DrillClass, Technology } from '../type'
+import type { World, Bank, DrillClass, Technology } from '../type'
 import type { Action as Action_ } from '../action'
 
 export type Action = Action_
@@ -11,6 +11,8 @@ export type Game = {
     day: number,
 
     world: World,
+
+    bank: Bank,
 
     technologies: {
         available: Technology[],

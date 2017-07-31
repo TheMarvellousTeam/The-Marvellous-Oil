@@ -59,6 +59,14 @@ export type Well = {
     samples: number[],
 }
 
+export type Bank = {
+    valueOil: number,
+    deltaOil: number,
+    money: number,
+    inflow: number,
+    outflow: number,
+}
+
 export type Derrick = {
     // index to the pomped oil pocket
     oilPocket: number,
