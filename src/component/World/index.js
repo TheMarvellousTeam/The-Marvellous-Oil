@@ -108,7 +108,6 @@ export const World = ({
                 <div className={style.wildLife}>
                     <WildLife size={size} gameSpeed={gameSpeed} />
                 </div>
-
             </div>
         </div>
     )
