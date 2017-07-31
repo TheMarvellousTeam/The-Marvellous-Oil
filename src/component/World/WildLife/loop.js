@@ -37,13 +37,15 @@ export class WildLife extends React.Component {
     _timeout: number | null = null
 
     loop = () => {
+        const delta = this.props.gameSpeed
+
         this.setState({
             entities: this.state.entities.map(entity => {
-                entity.theta += entity.v
+                entity.theta += entity.v * delta
 
                 const home = home_by_type[entity.type]
 
-                entity.t--
+                entity.t -= delta
 
                 if (entity.t < 0) {
                     entity.t = 0 | (Math.random() * 70 + 60)

@@ -13,6 +13,7 @@ export type Props = {
     game: Game_type,
     width: number,
     height: number,
+    gameSpeed: number,
     ghostDrill: *,
 
     onStartPlaceDrill: () => void,
@@ -24,6 +25,7 @@ export const Game = ({
     game,
     width,
     height,
+    gameSpeed,
     ghostDrill,
 
     onPointerClick,
@@ -35,6 +37,7 @@ export const Game = ({
             world={game.world}
             width={width}
             height={height}
+            gameSpeed={gameSpeed}
             ghostDrill={ghostDrill}
             onPointerMove={onPointerMove}
             onPointerClick={onPointerClick}

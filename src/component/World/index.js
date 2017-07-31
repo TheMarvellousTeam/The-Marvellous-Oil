@@ -27,6 +27,7 @@ export type Props = {
     world: World_type,
     width: number,
     height: number,
+    gameSpeed: number,
 
     onPointerMove: (pointer: PointPolar) => void,
     onPointerClick: (
@@ -48,6 +49,7 @@ export const World = ({
     world,
     width,
     height,
+    gameSpeed,
 
     onPointerMove,
     onPointerClick,
@@ -84,7 +86,7 @@ export const World = ({
                 </div>
 
                 <div className={style.wildLife}>
-                    <WildLife size={size} />
+                    <WildLife size={size} gameSpeed={gameSpeed} />
                 </div>
 
                 {world.wells.map((well, i) => {
