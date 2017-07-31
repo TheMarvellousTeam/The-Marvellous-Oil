@@ -7,6 +7,7 @@ exports[`Storyshots Bank default 1`] = `
   <div
     className="_231a0d21"
   >
+    $
     900
   </div>
   <div
@@ -15,12 +16,25 @@ exports[`Storyshots Bank default 1`] = `
     <div
       className="_498a39a2"
     >
+      +
       10
     </div>
     <div
       className="cb8c1002"
     >
       -10
+    </div>
+  </div>
+  <div
+    className="_236e4dce"
+  >
+    <div
+      className="_498a39a2"
+    />
+    <div
+      className="cb8c1002"
+    >
+      %
     </div>
   </div>
 </div>
@@ -225,6 +239,50 @@ exports[`Storyshots World default 1`] = `
           }
         }
       />
+      <div
+        className="_57e6f5c8"
+        style={
+          Object {
+            "height": 525,
+            "left": -262.5,
+            "top": -262.5,
+            "width": 525,
+          }
+        }
+      >
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+      </div>
       <div
         className="_2517da5d"
         style={

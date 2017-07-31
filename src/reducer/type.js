@@ -1,4 +1,4 @@
-import type { World, DrillClass, Technology } from '../type'
+import type { World, Bank, DrillClass, Technology } from '../type'
 import type { Action as Action_ } from '../action'
 
 export type Action = Action_
@@ -12,6 +12,8 @@ export type Game = {
 
     world: World,
 
+    bank: Bank,
+
     technologies: {
         available: Technology[],
 
@@ -19,8 +21,8 @@ export type Game = {
     },
 
     loop: {
-        // nextTic date
-        nextTic: 0,
+        // lastTic date
+        lastTic: 0,
 
         // in tic / s
         gameSpeed: 1,

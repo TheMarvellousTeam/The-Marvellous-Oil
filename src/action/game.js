@@ -28,6 +28,15 @@ export const placeDrill = (
     drillClassIndex,
 })
 
+type Action_Game_StopDrill = {
+    type: 'game:drill:stop',
+    index_well: number,
+}
+export const stopDrill = (index: number): Action_Game_StopDrill => ({
+    type: 'game:drill:stop',
+    index_well: index,
+})
+
 type Action_Game_UnlockDrill = {
     type: 'game:drill:unlock',
     drillClassIndex: number,

@@ -76,6 +76,8 @@ export const World = ({
             >
                 <Sky size={size * 2.2} />
 
+                <Clouds size={size * 1.5} gameSpeed={gameSpeed} />
+
                 <div
                     className={style.planet}
                     style={{
@@ -106,10 +108,28 @@ export const World = ({
                 <div className={style.wildLife}>
                     <WildLife size={size} gameSpeed={gameSpeed} />
                 </div>
+
             </div>
         </div>
     )
 }
+
+const Clouds = ({ size, gameSpeed }) =>
+    <div
+        className={style.clouds}
+        style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
+    >
+        {[0, 1, 2, 3].map(i =>
+            <div
+                key={i}
+                className={style.cloud}
+                style={{
+                    animationDuration:
+                        (gameSpeed ? (15 + i * 3.5) / gameSpeed : 999999) + 's',
+                }}
+            />
+        )}
+    </div>
 
 const Sky = ({ size }) =>
     <div

@@ -10,11 +10,35 @@ export const reduce = (state: State, action: Action): State => {
 
     switch (action.type) {
         case 'game:tic': {
+            const tic_money =
+                state.game.bank.money -
+                state.game.bank.outflow +
+                state.game.bank.inflow
             let totalCost = 0
             let totalEarned = 0
 
-            // fix cost
-            totalCost += 1
+            //TODO stock_exchange
+            let newDelta = state.game.bank.deltaOil
+            let newValue = state.game.bank.valueOil
+            let proba = 0.5
+            if (newValue > 100) {
+                proba = 0.9
+            } else if (newValue < 25) {
+                proba = 0.1
+            }
+            if (Math.random() > proba) {
+                newDelta = Math.min(
+                    20,
+                    newDelta + Math.floor(Math.random() * 5)
+                )
+            } else {
+                newDelta = Math.max(
+                    -5,
+                    newDelta - Math.floor(Math.random() * 5)
+                )
+            }
+
+            newValue = Math.max(10, Math.ceil(newValue * (1 + newDelta / 100)))
 
             let world = state.game.world
             let oils = [...world.oilPockets]
@@ -45,6 +69,10 @@ export const reduce = (state: State, action: Action): State => {
                                 oilPocket: i,
                                 derrickClass: drill.drillClass.derrickClass,
                             }
+                            updatedWell.samples = [
+                                ...updatedWell.samples,
+                                updatedWell.bottom.r,
+                            ]
                             updatedWell.drill = null
                         }
                     })
@@ -54,7 +82,10 @@ export const reduce = (state: State, action: Action): State => {
                         updatedWell.bottom.r ==
                         1 - drill.drillClass.max_depth
                     ) {
-                        //TODO add sample
+                        updatedWell.samples = [
+                            ...updatedWell.samples,
+                            updatedWell.bottom.r,
+                        ]
                         updatedWell.drill = null
                     }
                 }
@@ -71,7 +102,7 @@ export const reduce = (state: State, action: Action): State => {
 
                     oils[derrick.oilPocket].oil -= pumped
 
-                    totalEarned += pumped * state.game.valueOil
+                    totalEarned += pumped * newValue
                 }
 
                 return updatedWell
@@ -86,10 +117,53 @@ export const reduce = (state: State, action: Action): State => {
                         wells: wells,
                         oilPockets: oils,
                     },
-                    money: state.game.money - totalCost + totalEarned,
+                    bank: {
+                        ...state.game.bank,
+                        money: tic_money,
+                        inflow: totalEarned,
+                        outflow: totalCost,
+                        valueOil: newValue,
+                        deltaOil: newDelta,
+                    },
                     day: state.game.day + 1 / 48,
                 },
             }
+        }
+
+        case 'game:drill:stop': {
+            let game = state.game
+
+            const updatedWells = game.world.wells.map((well: Well, i) => {
+                let updatedWell = {
+                    ...well,
+                }
+                if (i == action.index_well) {
+                    updatedWell.drill = null
+                    updatedWell.samples = [
+                        ...updatedWell.samples,
+                        updatedWell.bottom.r,
+                    ]
+                }
+                return updatedWell
+            })
+            // copy the game
+            game = {
+                ...game,
+
+                bank: {
+                    ...game.bank,
+                },
+
+                // copy the world
+                world: {
+                    ...game.world,
+
+                    // add the drill to the world
+                    wells: updatedWells,
+                },
+            }
+
+            return { ...state, game }
         }
 
         case 'game:drill:place': {

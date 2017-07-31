@@ -8,8 +8,13 @@ export const reduce = (state: State, action: Action): State => {
     if (action.type === 'game:start')
         return set(state, ['game'], {
             world: createWorld(3),
-            money: 1000,
-            valueOil: 10,
+            bank: {
+                money: 1000,
+                inflow: 0,
+                outflow: 0,
+                deltaOil: 0,
+                valueOil: 10,
+            },
             day: 0,
             state: 'playing',
             technologies: {
@@ -21,7 +26,7 @@ export const reduce = (state: State, action: Action): State => {
                 ],
                 unlocked: [],
             },
-            loop: { nextTic: 0, gameSpeed: 1 },
+            loop: { lastTic: 0, gameSpeed: 1 },
         })
 
     return state
