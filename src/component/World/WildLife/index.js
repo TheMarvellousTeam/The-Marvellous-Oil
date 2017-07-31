@@ -19,7 +19,7 @@ export const WildLife = ({ size, entities }) =>
             const s = size / 2 + size * 0.02 * k * Math.abs(v) / 0.007
 
             const scale =
-                0.12 + size * 0.0007 * (0.8 + 0.4 * (tint * 37 % 17) / 17)
+                0.1 + size * 0.0007 * (0.8 + 0.4 * (tint * 37 % 17) / 17)
 
             return (
                 <div
