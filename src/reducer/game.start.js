@@ -25,7 +25,7 @@ export const reduce = (state: State, action: Action): State => {
                         drillClass,
                     })),
                 ],
-                unlocked: [],
+                unlocked: [true],
             },
             loop: { lastTic: 0, gameSpeed: 1 },
         })
