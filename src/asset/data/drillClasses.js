@@ -1,4 +1,5 @@
 import type { DrillClass } from '../../type'
+import { derrickClasses } from './derrickClasses'
 
 export const drillClasses: DrillClass[] = [
     {
@@ -9,6 +10,8 @@ export const drillClasses: DrillClass[] = [
 
         placement_cost: 10,
         drilling_cost: 1,
+
+        derrickClass: derrickClasses[0],
     },
     {
         name: 'drill de con',
@@ -18,6 +21,8 @@ export const drillClasses: DrillClass[] = [
 
         placement_cost: 20,
         drilling_cost: 1,
+
+        derrickClass: derrickClasses[1],
     },
     {
         name: 'drill de luxe',
@@ -27,6 +32,8 @@ export const drillClasses: DrillClass[] = [
 
         placement_cost: 30,
         drilling_cost: 5,
+
+        derrickClass: derrickClasses[2],
     },
     {
         name: 'drill brill 6 c',
@@ -36,5 +43,7 @@ export const drillClasses: DrillClass[] = [
 
         placement_cost: 38,
         drilling_cost: 8,
+
+        derrickClass: derrickClasses[3],
     },
 ]

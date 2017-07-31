@@ -1,4 +1,6 @@
 import { set, merge } from '../util/redux'
+import { toPoint } from '../util/math/pointPolar'
+import { distance } from '../util/math/point'
 
 import type { Action, State } from './type'
 import type { Drill, Well } from '../type'
@@ -9,19 +11,21 @@ export const reduce = (state: State, action: Action): State => {
     switch (action.type) {
         case 'game:tic': {
             let totalCost = 0
+            let totalEarned = 0
 
             // fix cost
             totalCost += 1
 
             let world = state.game.world
+            let oils = [...world.oilPockets]
 
             // update well
             const wells = world.wells.map((well: Well) => {
-                let drill = well.drill
                 let updatedWell = {
                     ...well,
                 }
 
+                const drill = well.drill
                 // drilling case
                 if (drill && drill.isDrilling) {
                     // drilling cost
@@ -31,16 +35,44 @@ export const reduce = (state: State, action: Action): State => {
                         1 - drill.drillClass.max_depth,
                         well.bottom.r - drill.drillClass.velocity
                     )
+
+                    oils.forEach((oil, i) => {
+                        const po = toPoint(oil.position)
+                        const pw = toPoint(updatedWell.bottom)
+
+                        if (distance(po, pw) < oil.radius) {
+                            updatedWell.derrick = {
+                                oilPocket: i,
+                                derrickClass: drill.drillClass.derrickClass,
+                            }
+                            updatedWell.drill = null
+                        }
+                    })
+
                     // if depth == max_depth delete drill
-                    //TODO add sample
                     if (
                         updatedWell.bottom.r ==
                         1 - drill.drillClass.max_depth
                     ) {
+                        //TODO add sample
                         updatedWell.drill = null
                     }
                 }
-                // TODO pumping case
+
+                let derrick = updatedWell.derrick
+                if (derrick) {
+                    totalCost += derrick.derrickClass.pumping_cost
+
+                    const wannaPump = derrick.derrickClass.inflow
+                    let pumped =
+                        wannaPump <= oils[derrick.oilPocket].oil
+                            ? wannaPump
+                            : oils[derrick.oilPocket].oil
+
+                    oils[derrick.oilPocket].oil -= pumped
+
+                    totalEarned += pumped * state.game.valueOil
+                }
 
                 return updatedWell
             })
@@ -51,9 +83,10 @@ export const reduce = (state: State, action: Action): State => {
                     ...state.game,
                     world: {
                         ...world,
-                        wells,
+                        wells: wells,
+                        oilPockets: oils,
                     },
-                    money: state.game.money - totalCost,
+                    money: state.game.money - totalCost + totalEarned,
                     day: state.game.day + 1 / 48,
                 },
             }

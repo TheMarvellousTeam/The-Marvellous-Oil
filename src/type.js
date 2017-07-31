@@ -28,6 +28,9 @@ export type DrillClass = {
 
     // per day
     drilling_cost: number,
+
+    //next
+    derrickClass: DerrickClass,
 }
 
 export type DerrickClass = {
@@ -35,7 +38,6 @@ export type DerrickClass = {
 
     inflow: number,
 
-    placement_cost: number,
     pumping_cost: number,
 }
 
