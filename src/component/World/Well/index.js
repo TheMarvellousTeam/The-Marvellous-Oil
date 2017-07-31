@@ -55,7 +55,7 @@ export const Well = ({ size, well, gameSpeed, day, onClickEntity }: Props) => {
                     className={style.drillHeadWrapper}
                     onClick={e => onClickEntity(e, 'drill')}
                     style={{
-                        transitionDuration: `${d * 0.8}s`,
+                        transitionDuration: `${d * 0.4}s`,
                         transform:
                             `rotateZ(${theta}rad)` +
                             `translate3d(${well.bottom.r * size / 2}px,0,0)` +
