@@ -251,6 +251,7 @@ exports[`Storyshots World default 1`] = `
         >
           <div
             className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
             style={
               Object {
                 "animationDuration": "0.5s",
@@ -260,6 +261,7 @@ exports[`Storyshots World default 1`] = `
         </div>
         <div
           className="_82173eee"
+          onClick={[Function]}
           style={
             Object {
               "transform": "rotateZ(4.084070449666731rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
@@ -304,6 +306,7 @@ exports[`Storyshots World default 1`] = `
         >
           <div
             className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
             style={
               Object {
                 "animationDuration": "0.5s",
@@ -313,6 +316,7 @@ exports[`Storyshots World default 1`] = `
         </div>
         <div
           className="_82173eee"
+          onClick={[Function]}
           style={
             Object {
               "transform": "rotateZ(0.9424777960769379rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
@@ -357,6 +361,7 @@ exports[`Storyshots World default 1`] = `
         >
           <div
             className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
             style={
               Object {
                 "animationDuration": "0.5s",
@@ -366,6 +371,7 @@ exports[`Storyshots World default 1`] = `
         </div>
         <div
           className="_82173eee"
+          onClick={[Function]}
           style={
             Object {
               "transform": "rotateZ(8.168140899333462rad)translate3d(52.5px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
@@ -402,6 +408,7 @@ exports[`Storyshots World default 1`] = `
       >
         <div
           className="_87b4696d"
+          onClick={[Function]}
           style={
             Object {
               "transform": "rotateZ(11.309733552923255rad)translate3d(175px,0,0)rotateZ(90deg)scale(0.219,0.219)",

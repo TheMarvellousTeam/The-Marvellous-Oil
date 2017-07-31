@@ -95,6 +95,11 @@ export const World = ({
                         well={well}
                         day={day}
                         gameSpeed={gameSpeed}
+                        onClickEntity={(event, type) =>
+                            onPointerClick(
+                                getPointer(width, height, size, event),
+                                { i, type }
+                            )}
                     />
                 )}
 

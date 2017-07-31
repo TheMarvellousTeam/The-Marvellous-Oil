@@ -14,9 +14,10 @@ export type Props = {
     size: number,
     gameSpeed: number,
     day: number,
+    onClickEntity: () => void,
 }
 
-export const Well = ({ size, well, gameSpeed, day }: Props) => {
+export const Well = ({ size, well, gameSpeed, day, onClickEntity }: Props) => {
     const scale = 0.12 + size * 0.0007
 
     const theta = well.bottom.theta
@@ -37,6 +38,7 @@ export const Well = ({ size, well, gameSpeed, day }: Props) => {
                     }}
                 >
                     <div
+                        onClick={e => onClickEntity(e, 'drillBase')}
                         className={
                             style.drillStructure +
                             ' ' +
@@ -51,6 +53,7 @@ export const Well = ({ size, well, gameSpeed, day }: Props) => {
             {well.drill &&
                 <div
                     className={style.drillHeadWrapper}
+                    onClick={e => onClickEntity(e, 'drill')}
                     style={{
                         transitionDuration: `${d * 0.8}s`,
                         transform:
@@ -75,6 +78,7 @@ export const Well = ({ size, well, gameSpeed, day }: Props) => {
             {well.derrick &&
                 <div
                     className={style.derrick}
+                    onClick={e => onClickEntity(e, 'derrick')}
                     style={{
                         transform:
                             `rotateZ(${theta}rad)` +
