@@ -7,7 +7,7 @@ import type { Action, State } from './type'
 export const reduce = (state: State, action: Action): State => {
     if (action.type === 'game:start')
         return set(state, ['game'], {
-            world: createWorld(3, 0.1),
+            world: createWorld(3),
             money: 1000,
             day: 0,
             state: 'playing',
@@ -20,7 +20,7 @@ export const reduce = (state: State, action: Action): State => {
                 ],
                 unlocked: [],
             },
-            loop: { nextTic: 0, gameSpeed: 0.5 },
+            loop: { nextTic: 0, gameSpeed: 1 },
         })
 
     return state

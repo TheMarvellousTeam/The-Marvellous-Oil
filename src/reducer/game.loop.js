@@ -10,7 +10,9 @@ export const reduce = (state: State, action: Action): State => {
             return set(
                 state,
                 ['game', 'loop', 'nextTic'],
-                Date.now() + 1000 / state.game.loop.gameSpeed
+                state.game.loop.gameSpeed > 0
+                    ? Date.now() + 1000 / state.game.loop.gameSpeed
+                    : Infinity
             )
 
         case 'game:gameSpeed:set':

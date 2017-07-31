@@ -77,6 +77,117 @@ exports[`Storyshots DrillShelf default 1`] = `
 </div>
 `;
 
+exports[`Storyshots GameSpeedSlider 0 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    gameSpeed: 0
+  </div>
+  <input
+    className={undefined}
+    max={4}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={0}
+  />
+  <div
+    className="fdc2c34b"
+  >
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameSpeedSlider 1 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    gameSpeed: 1
+  </div>
+  <input
+    className={undefined}
+    max={4}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={2}
+  />
+  <div
+    className="fdc2c34b"
+  >
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GameSpeedSlider 5 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    gameSpeed: 5
+  </div>
+  <input
+    className={undefined}
+    max={4}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={4}
+  />
+  <div
+    className="fdc2c34b"
+  >
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots World default 1`] = `
 <div
   style={

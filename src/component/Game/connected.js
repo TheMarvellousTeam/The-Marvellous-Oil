@@ -5,6 +5,7 @@ import { placeDrill } from '../../action/game'
 
 const mapStateToProps = state => ({
     game: state.game,
+    gameSpeed: state.game.loop.gameSpeed,
 })
 
 const mapDispatchToProps = {

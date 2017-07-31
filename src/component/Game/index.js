@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { World } from '../World'
+import { GameSpeedSlider } from '../GameSpeedSlider/connected'
 import { DrillShelf } from '../DrillShelf/connected'
 import { Bank } from '../Bank/connected'
 
@@ -12,6 +13,7 @@ export type Props = {
     game: Game_type,
     width: number,
     height: number,
+    gameSpeed: number,
     ghostDrill: *,
 
     onStartPlaceDrill: () => void,
@@ -23,6 +25,7 @@ export const Game = ({
     game,
     width,
     height,
+    gameSpeed,
     ghostDrill,
 
     onPointerClick,
@@ -34,6 +37,7 @@ export const Game = ({
             world={game.world}
             width={width}
             height={height}
+            gameSpeed={gameSpeed}
             ghostDrill={ghostDrill}
             onPointerMove={onPointerMove}
             onPointerClick={onPointerClick}
@@ -45,5 +49,9 @@ export const Game = ({
 
         <div className={style.bank}>
             <Bank />
+        </div>
+
+        <div className={style.gameSpeedSlider}>
+            <GameSpeedSlider />
         </div>
     </div>
