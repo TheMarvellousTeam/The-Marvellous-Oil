@@ -226,6 +226,50 @@ exports[`Storyshots World default 1`] = `
         }
       />
       <div
+        className="_57e6f5c8"
+        style={
+          Object {
+            "height": 525,
+            "left": -262.5,
+            "top": -262.5,
+            "width": 525,
+          }
+        }
+      >
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+        <div
+          className="_051d6be6"
+          style={
+            Object {
+              "animationDuration": "999999s",
+            }
+          }
+        />
+      </div>
+      <div
         className="_2517da5d"
         style={
           Object {
