@@ -21,6 +21,7 @@ export type DrillClass = {
 
     velocity: number,
     max_depth: number,
+    sample_radius: number,
 
     //// costs //////
     // initial cost
@@ -56,7 +57,7 @@ export type Well = {
     // current derrick,
     derrick: Derrick | null,
     // each place where the drill stopped, revealing a piece of the heatmap
-    samples: number[],
+    samples: { radius: number, r: number }[],
 }
 
 export type Bank = {
