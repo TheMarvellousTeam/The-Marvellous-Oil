@@ -7,6 +7,7 @@ exports[`Storyshots Bank default 1`] = `
   <div
     className="_231a0d21"
   >
+    $
     900
   </div>
   <div
@@ -15,12 +16,25 @@ exports[`Storyshots Bank default 1`] = `
     <div
       className="_498a39a2"
     >
+      +
       10
     </div>
     <div
       className="cb8c1002"
     >
       -10
+    </div>
+  </div>
+  <div
+    className="_236e4dce"
+  >
+    <div
+      className="_498a39a2"
+    />
+    <div
+      className="cb8c1002"
+    >
+      %
     </div>
   </div>
 </div>

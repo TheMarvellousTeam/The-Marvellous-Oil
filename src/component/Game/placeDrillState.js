@@ -17,12 +17,17 @@ export class Game extends React.Component {
         })
     }
 
-    onPointerClick = point => {
-        if (!this.state.ghostDrill) return
+    onPointerClick = (point, item) => {
+        if (item) {
+            if (item.type == 'drill') {
+                this.props.stopDrill(item.index)
+            }
+        } else {
+            if (!this.state.ghostDrill) return
+            this.props.placeDrill(point.theta, this.state.drillClassIndex)
 
-        this.props.placeDrill(point.theta, this.state.drillClassIndex)
-
-        this.setState({ ghostDrill: null })
+            this.setState({ ghostDrill: null })
+        }
     }
 
     onStartPlaceDrill = drillClassIndex => {
