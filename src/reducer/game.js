@@ -20,25 +20,19 @@ export const reduce = (state: State, action: Action): State => {
             //TODO stock_exchange
             let newDelta = state.game.bank.deltaOil
             let newValue = state.game.bank.valueOil
-            let proba = 0.5
-            if (newValue > 100) {
-                proba = 0.9
-            } else if (newValue < 25) {
-                proba = 0.1
-            }
+            let proba = 1 / (1 + Math.exp(-5 * (newValue - 50)))
             if (Math.random() > proba) {
                 newDelta = Math.min(
-                    20,
+                    10,
                     newDelta + Math.floor(Math.random() * 5)
                 )
             } else {
                 newDelta = Math.max(
-                    -5,
+                    -10,
                     newDelta - Math.floor(Math.random() * 5)
                 )
             }
-
-            newValue = Math.max(10, Math.ceil(newValue * (1 + newDelta / 100)))
+            newValue = Math.ceil(newValue * (1 + newDelta / 100))
 
             let world = state.game.world
             let oils = [...world.oilPockets]
@@ -69,6 +63,15 @@ export const reduce = (state: State, action: Action): State => {
                                 oilPocket: i,
                                 derrickClass: drill.drillClass.derrickClass,
                             }
+                            updatedWell.samples = [
+                                ...updatedWell.samples,
+                                {
+                                    r: updatedWell.bottom.r,
+                                    radius:
+                                        updatedWell.drill.drillClass
+                                            .sample_radius,
+                                },
+                            ]
                             updatedWell.drill = null
                         }
                     })
