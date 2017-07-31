@@ -9,6 +9,7 @@ export const reduce = (state: State, action: Action): State => {
         return set(state, ['game'], {
             world: createWorld(3),
             money: 1000,
+            valueOil: 10,
             day: 0,
             state: 'playing',
             technologies: {

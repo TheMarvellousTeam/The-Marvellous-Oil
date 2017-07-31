@@ -72,7 +72,8 @@ export const reduce = (state: State, action: Action): State => {
                             : oils[derrick.oilPocket].oil
                     console.log('pumping: ' + pumped)
                     oils[derrick.oilPocket].oil -= pumped
-                    //TODO earn money
+
+                    totalEarned += pumped * game.valueOil
                 }
 
                 return updatedWell
