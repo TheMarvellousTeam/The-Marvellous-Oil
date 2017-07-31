@@ -20,7 +20,7 @@ export class Game extends React.Component {
     onPointerClick = (point, item) => {
         if (item) {
             if (item.type == 'drill') {
-                this.props.stopDrill(item.index)
+                this.props.stopDrill(item.i)
             }
         } else {
             if (!this.state.ghostDrill) return
