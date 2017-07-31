@@ -31,12 +31,25 @@ export const reduce = (state: State, action: Action): State => {
                         1 - drill.drillClass.max_depth,
                         well.bottom.r - drill.drillClass.velocity
                     )
+
+                    world.oilPockets.forEach((oil, i) => {
+                        let touched = false
+                        //TODO check connection to oil
+                        if (touched) {
+                            updatedWell.derrick = {
+                                oilPacket: i,
+                                derrickClass: drill.drillClass.derrickClass,
+                            }
+                            updatedWell.drill = null
+                        }
+                    })
+
                     // if depth == max_depth delete drill
-                    //TODO add sample
                     if (
                         updatedWell.bottom.r ==
                         1 - drill.drillClass.max_depth
                     ) {
+                        //TODO add sample
                         updatedWell.drill = null
                     }
                 }
