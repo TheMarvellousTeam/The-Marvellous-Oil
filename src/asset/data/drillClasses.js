@@ -3,10 +3,10 @@ import { derrickClasses } from './derrickClasses'
 
 export const drillClasses: DrillClass[] = [
     {
-        name: 'drill de merde',
+        name: 'Wooden Drill',
 
         velocity: 0.04,
-        max_depth: 0.5,
+        max_depth: 0.45,
         sample_radius: 0.02,
 
         placement_cost: 100,
@@ -15,11 +15,11 @@ export const drillClasses: DrillClass[] = [
         derrickClass: derrickClasses[0],
     },
     {
-        name: 'drill de con',
+        name: 'Iron Drill',
 
         velocity: 0.04,
         max_depth: 0.6,
-        sample_radius: 0.07,
+        sample_radius: 0.04,
 
         placement_cost: 200,
         drilling_cost: 20,
@@ -27,9 +27,9 @@ export const drillClasses: DrillClass[] = [
         derrickClass: derrickClasses[1],
     },
     {
-        name: 'drill de luxe',
+        name: 'Golden Drill',
 
-        velocity: 0.14,
+        velocity: 0.08,
         max_depth: 0.6,
         sample_radius: 0.06,
 
@@ -39,9 +39,9 @@ export const drillClasses: DrillClass[] = [
         derrickClass: derrickClasses[2],
     },
     {
-        name: 'drill brill 6 c',
+        name: 'Drill Bril6c',
 
-        velocity: 0.04,
+        velocity: 0.02,
         max_depth: 0.9,
         sample_radius: 0.06,
 
