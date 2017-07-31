@@ -118,14 +118,166 @@ exports[`Storyshots World default 1`] = `
         className="_2517da5d"
         style={
           Object {
-            "height": 406,
-            "left": -203,
-            "top": -203,
-            "width": 406,
+            "height": 420,
+            "left": -210,
+            "top": -210,
+            "width": 420,
           }
         }
       >
         <canvas />
+      </div>
+      <div
+        className="_9db51524"
+      >
+        <div
+          className="ac5bf144"
+        >
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(0deg) saturate(90%)",
+                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.316,0.316)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(-8deg) saturate(92%)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.35865882352941175,0.35865882352941175)",
+              }
+            }
+          />
+          <div
+            className="_8666518d"
+            style={
+              Object {
+                "filter": "hue-rotate(-1.777777777777778deg) saturate(90.44444444444444%)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.3254797385620915,0.3254797385620915)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(-21.333333333333332deg) saturate(95.33333333333333%)",
+                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.3317568627450981,0.3317568627450981)",
+              }
+            }
+          />
+          <div
+            className="_8666518d"
+            style={
+              Object {
+                "filter": "hue-rotate(-26.666666666666664deg) saturate(96.66666666666667%)",
+                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.3601960784313726,0.3601960784313726)",
+              }
+            }
+          />
+          <div
+            className="_60057334"
+            style={
+              Object {
+                "filter": "hue-rotate(-17.77777777777778deg) saturate(94.44444444444444%)",
+                "transform": "rotateZ(3.3000000000000003rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.410797385620915,0.410797385620915)",
+              }
+            }
+          />
+          <div
+            className="_8666518d"
+            style={
+              Object {
+                "filter": "hue-rotate(-34.66666666666667deg) saturate(98.66666666666667%)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.4028549019607844,0.4028549019607844)",
+              }
+            }
+          />
+          <div
+            className="_60057334"
+            style={
+              Object {
+                "filter": "hue-rotate(-37.333333333333336deg) saturate(99.33333333333333%)",
+                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.31907450980392155,0.31907450980392155)",
+              }
+            }
+          />
+          <div
+            className="_8666518d"
+            style={
+              Object {
+                "filter": "hue-rotate(-25.77777777777778deg) saturate(96.44444444444444%)",
+                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.35545620915032683,0.35545620915032683)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(0deg) saturate(90%)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.316,0.316)",
+              }
+            }
+          />
+          <div
+            className="_8666518d"
+            style={
+              Object {
+                "filter": "hue-rotate(0deg) saturate(90%)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.316,0.316)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(-25.77777777777778deg) saturate(96.44444444444444%)",
+                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.35545620915032683,0.35545620915032683)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(-37.333333333333336deg) saturate(99.33333333333333%)",
+                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.31907450980392155,0.31907450980392155)",
+              }
+            }
+          />
+          <div
+            className="f7dc1047"
+            style={
+              Object {
+                "filter": "hue-rotate(-34.66666666666667deg) saturate(98.66666666666667%)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.4028549019607844,0.4028549019607844)",
+              }
+            }
+          />
+          <div
+            className="_60057334"
+            style={
+              Object {
+                "filter": "hue-rotate(-17.77777777777778deg) saturate(94.44444444444444%)",
+                "transform": "rotateZ(3.5rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.410797385620915,0.410797385620915)",
+              }
+            }
+          />
+          <div
+            className="_60057334"
+            style={
+              Object {
+                "filter": "hue-rotate(-26.666666666666664deg) saturate(96.66666666666667%)",
+                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.3601960784313726,0.3601960784313726)",
+              }
+            }
+          />
+        </div>
       </div>
       <div
         className="_00d83cf0"

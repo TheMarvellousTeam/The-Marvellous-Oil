@@ -17,17 +17,19 @@ const compareAngle = (ref, a) => (a - ref + Math.PI) % (Math.PI * 2) - Math.PI
 
 export class WildLife extends React.Component {
     state = {
-        entities: Array.from({ length: 16 }).map(() => {
+        entities: Array.from({ length: 16 }).map((_, i) => {
+            const r = (i * 117 + i * i * 37) % 17 / 17
+
             const type = Object.keys(home_by_type)[
-                Math.floor(Math.random() * Object.keys(home_by_type).length)
+                Math.floor(r * Object.keys(home_by_type).length)
             ]
 
             return {
                 type,
-                theta: home_by_type[type] + (Math.random() - 0.5) * 0.5,
+                theta: home_by_type[type] + i % 4 * 0.2,
                 t: 0,
                 v: 0,
-                tint: Math.random(),
+                tint: (i * 17 + i * i * 37) % 45 / 45,
             }
         }),
     }
