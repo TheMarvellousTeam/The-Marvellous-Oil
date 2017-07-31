@@ -191,7 +191,10 @@ export const reduce = (state: State, action: Action): State => {
                 ...game,
 
                 // withdraw the cost of the drill
-                money: game.money - drillClass.placement_cost,
+                bank: {
+                    ...game.bank,
+                    outflow: game.bank.outflow - drillClass.placement_cost,
+                },
 
                 // copy the world
                 world: {

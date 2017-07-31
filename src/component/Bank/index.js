@@ -19,7 +19,7 @@ export const Bank = ({ bank, outFlow, inFlow, value, change }: Props) =>
                 +{inFlow}
             </div>
             <div className={style.outFlow}>
-                {-outFlow}
+                -{outFlow}
             </div>
         </div>
 
