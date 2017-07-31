@@ -34,22 +34,6 @@ export const drawWorld = (
     world.wells.forEach(well => {
         const v = toPoint({ ...well.bottom, r: 1 })
 
-        const w = 2
-        const k = well.bottom.r
-
-        ctx.beginPath()
-        ctx.moveTo(
-            v.y * w + v.x * (size / 2 * k + 7),
-            -v.x * w + v.y * (size / 2 * k + 7)
-        )
-        ctx.lineTo(
-            -v.y * w + v.x * (size / 2 * k + 7),
-            +v.x * w + v.y * (size / 2 * k + 7)
-        )
-        ctx.lineTo(-v.y * w + v.x * size, +v.x * w + v.y * size)
-        ctx.lineTo(+v.y * w + v.x * size, -v.x * w + v.y * size)
-        ctx.fill()
-
         well.samples.forEach(({ radius, r }) => {
             ctx.beginPath()
             ctx.arc(
@@ -73,6 +57,36 @@ export const drawWorld = (
         size
     )
 
+    // draw the drill conduct
+    ctx.globalCompositeOperation = 'destination-over'
+    world.wells.forEach(well => {
+        const v = toPoint({ ...well.bottom, r: 1 })
+
+        const w = 2
+        const k = well.bottom.r
+
+        ctx.fillStyle = '#888'
+
+        ctx.beginPath()
+        ctx.moveTo(
+            v.y * w + v.x * (size / 2 * k),
+            -v.x * w + v.y * (size / 2 * k)
+        )
+        ctx.lineTo(
+            -v.y * w + v.x * (size / 2 * k),
+            v.x * w + v.y * (size / 2 * k)
+        )
+        ctx.lineTo(-v.y * w + v.x * size / 2, +v.x * w + v.y * size / 2)
+        ctx.lineTo(v.y * w + v.x * size / 2, -v.x * w + v.y * size / 2)
+
+        ctx.fill()
+
+        ctx.beginPath()
+        ctx.arc(v.x * (size / 2 * k), v.y * (size / 2 * k), w, 0, Math.PI * 2)
+        ctx.fill()
+    })
+
+    // draw the planet core mask
     const ksize = size * 0.92
     ctx.globalCompositeOperation = 'destination-over'
     if (imageLoader.syncGet(URL_TERRE))
@@ -84,6 +98,7 @@ export const drawWorld = (
             ksize
         )
 
+    // draw the surface
     const usize = lsize * 0.9
     ctx.globalCompositeOperation = 'destination-over'
     if (imageLoader.syncGet(URL_SURFACE))
@@ -94,11 +109,6 @@ export const drawWorld = (
             usize,
             usize / 845 * 796
         )
-
-    // ctx.fillStyle = '#73421a'
-    // ctx.beginPath()
-    // ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2)
-    // ctx.fill()
 
     ctx.restore()
 }
