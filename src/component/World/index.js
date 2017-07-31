@@ -4,6 +4,7 @@ import { scal } from '../../util/math/point'
 import { Well } from './Well'
 import { Clouds } from './Clouds'
 import { Planet } from './Planet'
+import { GhostDrill } from './GhostDrill'
 import { WildLife } from './WildLife/loop'
 import type { World as World_type } from '../../type'
 import type { PointPolar } from '../../util/math/pointPolar'
@@ -54,6 +55,7 @@ export const World = ({
     height,
     day,
     gameSpeed,
+    ghostDrill,
 
     onPointerMove,
     onPointerClick,
@@ -105,6 +107,9 @@ export const World = ({
                             )}
                     />
                 )}
+
+                {ghostDrill &&
+                    <GhostDrill ghostDrill={ghostDrill} size={size} />}
 
                 <div className={style.wildLife}>
                     <WildLife size={size} gameSpeed={gameSpeed} />
