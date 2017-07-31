@@ -22,7 +22,8 @@ exports[`Storyshots Bank default 1`] = `
     <div
       className="cb8c1002"
     >
-      -10
+      -
+      10
     </div>
   </div>
   <div
@@ -49,44 +50,42 @@ exports[`Storyshots DrillShelf default 1`] = `
     onClick={[Function]}
   >
     <div
-      className="_9764efd4"
-    >
-      drill de merde
-    </div>
-    
+      className="_59aa290f _5494603d "
+    />
   </div>
   <div
     className="_2b3f086a"
     onClick={[Function]}
   >
     <div
-      className="_9764efd4"
+      className="_59aa290f aeef4ad7 _43417977"
+    />
+    <div
+      className="_94bff221"
     >
-      drill de con
+      $100
     </div>
-    [locked]
   </div>
   <div
     className="_2b3f086a"
     onClick={[Function]}
   >
     <div
-      className="_9764efd4"
-    >
-      drill de luxe
-    </div>
-    
+      className="_59aa290f _575425e5 "
+    />
   </div>
   <div
     className="_2b3f086a"
     onClick={[Function]}
   >
     <div
-      className="_9764efd4"
+      className="_59aa290f _98a8844b _43417977"
+    />
+    <div
+      className="_94bff221"
     >
-      drill brill 6 c
+      $500
     </div>
-    [locked]
   </div>
 </div>
 `;
@@ -323,7 +322,7 @@ exports[`Storyshots World default 1`] = `
           style={
             Object {
               "transform": "rotateZ(4.084070449666731rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
+              "transitionDuration": "0.4s",
             }
           }
         >
@@ -378,7 +377,7 @@ exports[`Storyshots World default 1`] = `
           style={
             Object {
               "transform": "rotateZ(0.9424777960769379rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
+              "transitionDuration": "0.4s",
             }
           }
         >
@@ -433,7 +432,7 @@ exports[`Storyshots World default 1`] = `
           style={
             Object {
               "transform": "rotateZ(8.168140899333462rad)translate3d(52.5px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
+              "transitionDuration": "0.4s",
             }
           }
         >
