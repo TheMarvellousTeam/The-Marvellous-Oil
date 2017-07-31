@@ -3,6 +3,7 @@ import { create as createSpriteMemoize } from './spriteMemoize'
 import {} from '../../../util/math/point'
 import { imageLoader } from '../../../util/imageLoader'
 import { toPoint } from '../../../util/math/pointPolar'
+import * as param from '../../../config/game'
 
 import type { World as World_type } from '../../type'
 
@@ -51,7 +52,13 @@ export const drawWorld = (
 
         well.samples.forEach(r => {
             ctx.beginPath()
-            ctx.arc(v.x * size / 2 * r, v.y * size / 2 * r, 10, 0, Math.PI * 2)
+            ctx.arc(
+                v.x * size / 2 * r,
+                v.y * size / 2 * r,
+                size / 2 * param.drill_hole_radius,
+                0,
+                Math.PI * 2
+            )
             ctx.fill()
         })
     })
