@@ -21,8 +21,8 @@ export type Game = {
     },
 
     loop: {
-        // nextTic date
-        nextTic: 0,
+        // lastTic date
+        lastTic: 0,
 
         // in tic / s
         gameSpeed: 1,

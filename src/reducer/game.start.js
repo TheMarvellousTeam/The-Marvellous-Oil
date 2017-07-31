@@ -26,7 +26,7 @@ export const reduce = (state: State, action: Action): State => {
                 ],
                 unlocked: [],
             },
-            loop: { nextTic: 0, gameSpeed: 1 },
+            loop: { lastTic: 0, gameSpeed: 1 },
         })
 
     return state
