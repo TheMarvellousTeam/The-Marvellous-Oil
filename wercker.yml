@@ -49,6 +49,8 @@ deploy:
 
                     echo 0 > tmp
 
+                    ls | grep -v "version\|.git"
+
                     ls | grep -v "version\|.git" | xargs rm -r
 
                     # remove all file, fucks up with dir
