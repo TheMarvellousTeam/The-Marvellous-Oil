@@ -2,6 +2,11 @@ import React from 'react'
 
 import { Game as SimpleGame } from './fit'
 import { connect } from 'react-redux'
+import * as param from '../../config/game'
+
+const n = param.n_drill_spot
+
+const roundTheta = x => Math.round(x / (Math.PI * 2) * n) / n * Math.PI * 2
 
 export class Game extends React.Component {
     state = { drillClassIndex: 0, ghostDrill: null }
@@ -12,7 +17,7 @@ export class Game extends React.Component {
         this.setState({
             ghostDrill: {
                 ...this.state.ghostDrill,
-                position: { ...point, r: 0 },
+                theta: roundTheta(point.theta),
             },
         })
     }
@@ -24,7 +29,10 @@ export class Game extends React.Component {
             }
         } else {
             if (!this.state.ghostDrill) return
-            this.props.placeDrill(point.theta, this.state.drillClassIndex)
+            this.props.placeDrill(
+                roundTheta(point.theta),
+                this.state.drillClassIndex
+            )
 
             this.setState({ ghostDrill: null })
         }
@@ -35,10 +43,7 @@ export class Game extends React.Component {
 
         const ghostDrill = {
             drillClass,
-            position: {
-                theta: 0,
-                r: 1,
-            },
+            theta: 0,
         }
 
         this.setState({ drillClassIndex, ghostDrill })

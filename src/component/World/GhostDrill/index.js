@@ -16,7 +16,7 @@ export type Props = {
 export const GhostDrill = ({ size, ghostDrill }: Props) => {
     const scale = 0.12 + size * 0.0007
 
-    const theta = ghostDrill.position.theta
+    const theta = ghostDrill.theta
 
     return (
         <div className={style.container}>
