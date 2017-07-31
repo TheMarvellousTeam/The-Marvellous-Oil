@@ -8,18 +8,27 @@ export type Props = {
     inFlow: number,
 }
 
-export const Bank = ({ bank, outFlow, inFlow }: Props) =>
+export const Bank = ({ bank, outFlow, inFlow, value, change }: Props) =>
     <div className={style.container}>
         <div className={style.bank}>
-            {bank}
+            ${bank}
         </div>
 
         <div className={style.detail}>
             <div className={style.inFlow}>
-                {inFlow}
+                +{inFlow}
             </div>
             <div className={style.outFlow}>
                 {-outFlow}
+            </div>
+        </div>
+
+        <div className={style.detail}>
+            <div className={style.inFlow}>
+                {value}
+            </div>
+            <div className={style.outFlow}>
+                {change}%
             </div>
         </div>
     </div>

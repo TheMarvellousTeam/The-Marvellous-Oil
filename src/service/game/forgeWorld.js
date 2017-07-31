@@ -31,6 +31,6 @@ export const create = (n: number): World => ({
     oilPockets: plantPoint(n, 0.3).map(position => ({
         position,
         radius: 0.05,
-        oil: Math.floor(Math.random() * 100),
+        oil: Math.floor(Math.random() * 500 + 1000),
     })),
 })

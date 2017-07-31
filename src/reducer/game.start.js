@@ -8,8 +8,13 @@ export const reduce = (state: State, action: Action): State => {
     if (action.type === 'game:start')
         return set(state, ['game'], {
             world: createWorld(3),
-            money: 1000,
-            valueOil: 10,
+            bank: {
+                money: 1000,
+                inflow: 0,
+                outflow: 0,
+                deltaOil: 0,
+                valueOil: 10,
+            },
             day: 0,
             state: 'playing',
             technologies: {
