@@ -20,6 +20,18 @@ const world = {
         },
         {
             bottom: {
+                theta: Math.PI * 0.3,
+                r: 0.4,
+            },
+            drill: {
+                isDrilling: true,
+                drillClass: drillClasses[0],
+            },
+            derrick: null,
+            samples: [0.4],
+        },
+        {
+            bottom: {
                 theta: Math.PI * 2.6,
                 r: 0.3,
             },
@@ -36,7 +48,7 @@ const world = {
                 r: 0.8,
             },
             drill: null,
-            derrick: null,
+            derrick: true,
             samples: [0.8],
         },
     ],
@@ -55,6 +67,7 @@ storiesOf('World', module).add('default', () =>
         <World
             width={600}
             height={500}
+            gameSpeed={1}
             world={world}
             onPointerMove={action('onPointerMove')}
             onPointerClick={action('onPointerClick')}

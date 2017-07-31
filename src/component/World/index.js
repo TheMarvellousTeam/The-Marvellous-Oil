@@ -1,6 +1,7 @@
 import React from 'react'
 import { toPoint, fromPoint } from '../../util/math/pointPolar'
 import { scal } from '../../util/math/point'
+import { Well } from './Well'
 import { Planet } from './Planet'
 import { WildLife } from './WildLife/loop'
 import type { World as World_type } from '../../type'
@@ -28,6 +29,7 @@ export type Props = {
     width: number,
     height: number,
     gameSpeed: number,
+    day: number,
 
     onPointerMove: (pointer: PointPolar) => void,
     onPointerClick: (
@@ -49,6 +51,7 @@ export const World = ({
     world,
     width,
     height,
+    day,
     gameSpeed,
 
     onPointerMove,
@@ -87,42 +90,25 @@ export const World = ({
                     <Planet size={planet_size} world={world} />
                 </div>
 
+                {world.wells.map((well, i) =>
+                    <Well
+                        key={i}
+                        size={size}
+                        well={well}
+                        day={day}
+                        gameSpeed={gameSpeed}
+                        onClickEntity={(event, type) =>
+                            onPointerClick(
+                                getPointer(width, height, size, event),
+                                { i, type }
+                            )}
+                    />
+                )}
+
                 <div className={style.wildLife}>
                     <WildLife size={size} gameSpeed={gameSpeed} />
                 </div>
 
-                {world.wells.map((well, i) => {
-                    let position = {
-                        theta: well.bottom.theta,
-                        r: 1,
-                    }
-                    return (
-                        <Well
-                            key={well.bottom.theta}
-                            size={size}
-                            position={position}
-                        />
-                    )
-                })}
-
-                {world.wells.map((well, i) => {
-                    if (well.drill)
-                        return (
-                            <Drill
-                                key={well.bottom.theta}
-                                position={well.bottom}
-                                size={size}
-                                onClick={e =>
-                                    onPointerClick(
-                                        getPointer(width, height, size, e),
-                                        {
-                                            type: 'drill',
-                                            index: i,
-                                        }
-                                    )}
-                            />
-                        )
-                })}
             </div>
         </div>
     )
@@ -149,23 +135,4 @@ const Sky = ({ size }) =>
     <div
         className={style.sky}
         style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
-    />
-
-const transform = (position: PointPolar, size: number) => {
-    const u = scal(toPoint(position), size)
-    return `translate3d(${u.x}px,${u.y}px,${0}) rotateZ(${position.theta}rad)`
-}
-
-const Well = ({ size, position, onClick }) =>
-    <div
-        onClick={onClick}
-        className={style.well}
-        style={{ transform: transform(position, size / 2) }}
-    />
-
-const Drill = ({ size, position, onClick }) =>
-    <div
-        onClick={onClick}
-        className={style.drill}
-        style={{ transform: transform(position, size / 2) }}
     />

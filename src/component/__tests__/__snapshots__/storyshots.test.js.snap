@@ -254,7 +254,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "15s",
             }
           }
         />
@@ -262,7 +262,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "18.5s",
             }
           }
         />
@@ -270,7 +270,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "22s",
             }
           }
         />
@@ -278,7 +278,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "25.5s",
             }
           }
         />
@@ -295,6 +295,207 @@ exports[`Storyshots World default 1`] = `
         }
       >
         <canvas />
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          onClick={[Function]}
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(217px,0,0)rotateZ(-4.084070449666731rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -10
+          </div>
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          onClick={[Function]}
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(217px,0,0)rotateZ(-0.9424777960769379rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -10
+          </div>
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            onClick={[Function]}
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          onClick={[Function]}
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(52.5px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(217px,0,0)rotateZ(-8.168140899333462rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -10
+          </div>
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_87b4696d"
+          onClick={[Function]}
+          style={
+            Object {
+              "transform": "rotateZ(11.309733552923255rad)translate3d(175px,0,0)rotateZ(90deg)scale(0.219,0.219)",
+            }
+          }
+        >
+          <div
+            className="a5e77469"
+            style={
+              Object {
+                "animationDuration": "2s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(11.309733552923255rad)translate3d(217px,0,0)rotateZ(-11.309733552923255rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe  "
+          >
+            
+          </div>
+        </div>
       </div>
       <div
         className="_9db51524"
@@ -448,51 +649,6 @@ exports[`Storyshots World default 1`] = `
           />
         </div>
       </div>
-      <div
-        className="_00d83cf0"
-        onClick={undefined}
-        style={
-          Object {
-            "transform": "translate3d(-102.86241915118282px,-141.57797401561578px,0) rotateZ(4.084070449666731rad)",
-          }
-        }
-      />
-      <div
-        className="_00d83cf0"
-        onClick={undefined}
-        style={
-          Object {
-            "transform": "translate3d(-54.077974015615744px,166.4348903516519px,0) rotateZ(8.168140899333462rad)",
-          }
-        }
-      />
-      <div
-        className="_00d83cf0"
-        onClick={undefined}
-        style={
-          Object {
-            "transform": "translate3d(54.07797401561572px,-166.43489035165192px,0) rotateZ(11.309733552923255rad)",
-          }
-        }
-      />
-      <div
-        className="_4aff70ea"
-        onClick={[Function]}
-        style={
-          Object {
-            "transform": "translate3d(-41.14496766047313px,-56.631189606246316px,0) rotateZ(4.084070449666731rad)",
-          }
-        }
-      />
-      <div
-        className="_4aff70ea"
-        onClick={[Function]}
-        style={
-          Object {
-            "transform": "translate3d(-16.223392204684725px,49.930467105495566px,0) rotateZ(8.168140899333462rad)",
-          }
-        }
-      />
     </div>
   </div>
 </div>
