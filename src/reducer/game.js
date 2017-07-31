@@ -69,18 +69,14 @@ export const reduce = (state: State, action: Action): State => {
                                 oilPocket: i,
                                 derrickClass: drill.drillClass.derrickClass,
                             }
-                            updatedWell.samples = [
-                                ...updatedWell.samples,
-                                updatedWell.bottom.r,
-                            ]
                             updatedWell.drill = null
                         }
                     })
 
                     // if depth == max_depth delete drill
                     if (
-                        updatedWell.bottom.r ==
-                        1 - drill.drillClass.max_depth
+                        updatedWell.drill &&
+                        updatedWell.bottom.r == 1 - drill.drillClass.max_depth
                     ) {
                         updatedWell.samples = [
                             ...updatedWell.samples,
