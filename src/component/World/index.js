@@ -2,6 +2,7 @@ import React from 'react'
 import { toPoint, fromPoint } from '../../util/math/pointPolar'
 import { scal } from '../../util/math/point'
 import { Well } from './Well'
+import { Clouds } from './Clouds'
 import { Planet } from './Planet'
 import { WildLife } from './WildLife/loop'
 import type { World as World_type } from '../../type'
@@ -112,23 +113,6 @@ export const World = ({
         </div>
     )
 }
-
-const Clouds = ({ size, gameSpeed }) =>
-    <div
-        className={style.clouds}
-        style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
-    >
-        {[0, 1, 2, 3].map(i =>
-            <div
-                key={i}
-                className={style.cloud}
-                style={{
-                    animationDuration:
-                        (gameSpeed ? (15 + i * 3.5) / gameSpeed : 999999) + 's',
-                }}
-            />
-        )}
-    </div>
 
 const Sky = ({ size }) =>
     <div
