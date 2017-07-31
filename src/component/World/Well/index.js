@@ -101,7 +101,8 @@ export const Well = ({ size, well, gameSpeed, day, onClickEntity }: Props) => {
                     style={{
                         transform:
                             `rotateZ(${theta}rad)` +
-                            `translate3d(${size * 0.62}px,0,0)` +
+                            `translate3d(${size *
+                                (well.derrick ? 0.66 : 0.62)}px,0,0)` +
                             `rotateZ(${-theta}rad)`,
                     }}
                 >
@@ -112,12 +113,12 @@ export const Well = ({ size, well, gameSpeed, day, onClickEntity }: Props) => {
                             ' ' +
                             ((well.drill && style.bubbleDrill) || '') +
                             ' ' +
-                            ((well.derick && style.derickDrill) || '')
+                            ((well.derrick && style.derrickDrill) || '')
                         }
                     >
                         {(well.drill &&
                             `${-well.drill.drillClass.drilling_cost}`) ||
-                            ((well.derick && `++`) || '')}
+                            ((well.derrick && '+') || '')}
                     </div>
                 </div>}
         </div>
