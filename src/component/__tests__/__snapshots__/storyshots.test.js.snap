@@ -254,7 +254,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "15s",
             }
           }
         />
@@ -262,7 +262,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "18.5s",
             }
           }
         />
@@ -270,7 +270,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "22s",
             }
           }
         />
@@ -278,7 +278,7 @@ exports[`Storyshots World default 1`] = `
           className="_051d6be6"
           style={
             Object {
-              "animationDuration": "999999s",
+              "animationDuration": "25.5s",
             }
           }
         />
@@ -347,7 +347,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -1
+            -10
           </div>
         </div>
       </div>
@@ -402,7 +402,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -1
+            -10
           </div>
         </div>
       </div>
@@ -457,7 +457,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -1
+            -10
           </div>
         </div>
       </div>
