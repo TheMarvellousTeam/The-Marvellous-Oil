@@ -38,6 +38,7 @@ export const Game = ({
             width={width}
             height={height}
             gameSpeed={gameSpeed}
+            day={game.day}
             ghostDrill={ghostDrill}
             onPointerMove={onPointerMove}
             onPointerClick={onPointerClick}

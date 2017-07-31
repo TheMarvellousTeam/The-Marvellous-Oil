@@ -13,9 +13,10 @@ export type Props = {
     well: Well_type,
     size: number,
     gameSpeed: number,
+    day: number,
 }
 
-export const Well = ({ size, well, gameSpeed }: Props) => {
+export const Well = ({ size, well, gameSpeed, day }: Props) => {
     const scale = 0.12 + size * 0.0007
 
     const theta = well.bottom.theta
@@ -88,6 +89,32 @@ export const Well = ({ size, well, gameSpeed }: Props) => {
                             animationDuration: `${d * 2}s`,
                         }}
                     />
+                </div>}
+
+            {(well.derrick || well.drill) &&
+                <div
+                    className={style.bubbleWrapper}
+                    style={{
+                        transform:
+                            `rotateZ(${theta}rad)` +
+                            `translate3d(${size * 0.62}px,0,0)` +
+                            `rotateZ(${-theta}rad)`,
+                    }}
+                >
+                    <div
+                        key={day}
+                        className={
+                            style.bubble +
+                            ' ' +
+                            ((well.drill && style.bubbleDrill) || '') +
+                            ' ' +
+                            ((well.derick && style.derickDrill) || '')
+                        }
+                    >
+                        {(well.drill &&
+                            `${-well.drill.drillClass.drilling_cost}`) ||
+                            ((well.derick && `++`) || '')}
+                    </div>
                 </div>}
         </div>
     )

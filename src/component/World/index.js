@@ -29,6 +29,7 @@ export type Props = {
     width: number,
     height: number,
     gameSpeed: number,
+    day: number,
 
     onPointerMove: (pointer: PointPolar) => void,
     onPointerClick: (
@@ -50,6 +51,7 @@ export const World = ({
     world,
     width,
     height,
+    day,
     gameSpeed,
 
     onPointerMove,
@@ -91,6 +93,7 @@ export const World = ({
                         key={i}
                         size={size}
                         well={well}
+                        day={day}
                         gameSpeed={gameSpeed}
                     />
                 )}

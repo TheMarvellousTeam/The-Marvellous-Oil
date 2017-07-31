@@ -276,6 +276,20 @@ exports[`Storyshots World default 1`] = `
             }
           />
         </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(217px,0,0)rotateZ(-4.084070449666731rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -1
+          </div>
+        </div>
       </div>
       <div
         className="b5393d59"
@@ -314,6 +328,20 @@ exports[`Storyshots World default 1`] = `
               }
             }
           />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(217px,0,0)rotateZ(-0.9424777960769379rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -1
+          </div>
         </div>
       </div>
       <div
@@ -354,6 +382,20 @@ exports[`Storyshots World default 1`] = `
             }
           />
         </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(217px,0,0)rotateZ(-8.168140899333462rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe _568e3102 "
+          >
+            -1
+          </div>
+        </div>
       </div>
       <div
         className="b5393d59"
@@ -374,6 +416,20 @@ exports[`Storyshots World default 1`] = `
               }
             }
           />
+        </div>
+        <div
+          className="_2be7f7c5"
+          style={
+            Object {
+              "transform": "rotateZ(11.309733552923255rad)translate3d(217px,0,0)rotateZ(-11.309733552923255rad)",
+            }
+          }
+        >
+          <div
+            className="_4a861cbe  "
+          >
+            
+          </div>
         </div>
       </div>
       <div
