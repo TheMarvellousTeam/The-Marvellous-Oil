@@ -25,7 +25,7 @@ export const reduce = (state: State, action: Action): State => {
                     ...well,
                 }
 
-                let drill = well.drill
+                const drill = well.drill
                 // drilling case
                 if (drill && drill.isDrilling) {
                     // drilling cost
@@ -40,8 +40,6 @@ export const reduce = (state: State, action: Action): State => {
                         const po = toPoint(oil.position)
                         const pw = toPoint(updatedWell.bottom)
 
-                        //TODO check connection to oil
-                        console.log('oil ' + i + ' d:' + distance(po, pw))
                         if (distance(po, pw) < oil.radius) {
                             updatedWell.derrick = {
                                 oilPocket: i,
@@ -63,22 +61,25 @@ export const reduce = (state: State, action: Action): State => {
 
                 let derrick = updatedWell.derrick
                 if (derrick) {
-                    totalCost += derrick.pumping_cost
+                    totalCost += derrick.derrickClass.pumping_cost
 
                     const wannaPump = derrick.derrickClass.inflow
                     let pumped =
                         wannaPump <= oils[derrick.oilPocket].oil
                             ? wannaPump
                             : oils[derrick.oilPocket].oil
-                    console.log('pumping: ' + pumped)
+
                     oils[derrick.oilPocket].oil -= pumped
 
-                    totalEarned += pumped * game.valueOil
+                    totalEarned += pumped * state.game.valueOil
                 }
 
                 return updatedWell
             })
-
+            console.log(
+                state.game.money + '+' + totalEarned + '-' + totalCost + '='
+            )
+            console.log(state.game.money - totalCost + totalEarned)
             return {
                 ...state,
                 game: {

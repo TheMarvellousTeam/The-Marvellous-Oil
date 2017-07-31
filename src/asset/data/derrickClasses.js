@@ -2,27 +2,31 @@ import type { DerrickClass } from '../../type'
 
 export const derrickClasses: DerrickClass[] = [
     {
-        name: 'derrick basique',
+        name: 'agent derrick',
 
-        inflow: 2,
+        inflow: 1,
+
         pumping_cost: 1,
     },
     {
-        name: 'derrick basique',
+        name: 'derrick',
 
         inflow: 2,
+
         pumping_cost: 1,
     },
     {
-        name: 'derrick basique',
+        name: 'golden derrick',
 
-        inflow: 2,
+        inflow: 3,
+
         pumping_cost: 1,
     },
     {
-        name: 'derrick basique',
+        name: 'detective derrick',
 
-        inflow: 2,
+        inflow: 4,
+
         pumping_cost: 1,
     },
 ]
