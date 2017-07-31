@@ -38,7 +38,7 @@ export const reduce = (state: State, action: Action): State => {
                 )
             }
 
-            newValue = Math.floor(newValue * (1 + newDelta / 100))
+            newValue = Math.max(2, Math.floor(newValue * (1 + newDelta / 100)))
 
             let world = state.game.world
             let oils = [...world.oilPockets]
@@ -78,7 +78,10 @@ export const reduce = (state: State, action: Action): State => {
                         updatedWell.bottom.r ==
                         1 - drill.drillClass.max_depth
                     ) {
-                        //TODO add sample
+                        updatedWell.samples = [
+                            ...updatedWell.samples,
+                            updatedWell.bottom.r,
+                        ]
                         updatedWell.drill = null
                     }
                 }
@@ -121,6 +124,42 @@ export const reduce = (state: State, action: Action): State => {
                     day: state.game.day + 1 / 48,
                 },
             }
+        }
+
+        case 'game:drill:stop': {
+            let game = state.game
+
+            const updatedWells = game.world.wells.map((well: Well, i) => {
+                let updatedWell = {
+                    ...well,
+                }
+                if (i == action.index_well) {
+                    updatedWell.drill = null
+                    updatedWell.samples = [
+                        ...updatedWell.samples,
+                        updatedWell.bottom.r,
+                    ]
+                }
+                return updatedWell
+            })
+            // copy the game
+            game = {
+                ...game,
+
+                bank: {
+                    ...game.bank,
+                },
+
+                // copy the world
+                world: {
+                    ...game.world,
+
+                    // add the drill to the world
+                    wells: updatedWells,
+                },
+            }
+
+            return { ...state, game }
         }
 
         case 'game:drill:place': {

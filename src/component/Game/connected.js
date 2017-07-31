@@ -1,7 +1,7 @@
 import { Game as Component } from './placeDrillState'
 import { connect } from 'react-redux'
 
-import { placeDrill } from '../../action/game'
+import { placeDrill, stopDrill } from '../../action/game'
 
 const mapStateToProps = state => ({
     game: state.game,
@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     placeDrill,
+    stopDrill,
 }
 
 export const Game = connect(mapStateToProps, mapDispatchToProps)(Component)

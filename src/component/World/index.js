@@ -105,18 +105,24 @@ export const World = ({
                     )
                 })}
 
-                {world.wells.filter(well => well.drill).map((well, i) =>
-                    <Drill
-                        key={well.bottom.theta}
-                        position={well.bottom}
-                        size={size}
-                        onClick={e =>
-                            onPointerClick(getPointer(width, height, size, e), {
-                                type: 'drill',
-                                index: i,
-                            })}
-                    />
-                )}
+                {world.wells.map((well, i) => {
+                    if (well.drill)
+                        return (
+                            <Drill
+                                key={well.bottom.theta}
+                                position={well.bottom}
+                                size={size}
+                                onClick={e =>
+                                    onPointerClick(
+                                        getPointer(width, height, size, e),
+                                        {
+                                            type: 'drill',
+                                            index: i,
+                                        }
+                                    )}
+                            />
+                        )
+                })}
             </div>
         </div>
     )
