@@ -50,12 +50,12 @@ export const drawWorld = (
         ctx.lineTo(+v.y * w + v.x * size, -v.x * w + v.y * size)
         ctx.fill()
 
-        well.samples.forEach(r => {
+        well.samples.forEach(({ radius, r }) => {
             ctx.beginPath()
             ctx.arc(
                 v.x * size / 2 * r,
                 v.y * size / 2 * r,
-                size / 2 * param.drill_hole_radius,
+                size / 2 * radius,
                 0,
                 Math.PI * 2
             )

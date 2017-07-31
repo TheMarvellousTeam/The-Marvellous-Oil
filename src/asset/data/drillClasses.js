@@ -7,6 +7,7 @@ export const drillClasses: DrillClass[] = [
 
         velocity: 0.04,
         max_depth: 0.5,
+        sample_radius: 0.02,
 
         placement_cost: 100,
         drilling_cost: 10,
@@ -18,6 +19,7 @@ export const drillClasses: DrillClass[] = [
 
         velocity: 0.04,
         max_depth: 0.6,
+        sample_radius: 0.07,
 
         placement_cost: 200,
         drilling_cost: 20,
@@ -29,6 +31,7 @@ export const drillClasses: DrillClass[] = [
 
         velocity: 0.14,
         max_depth: 0.6,
+        sample_radius: 0.06,
 
         placement_cost: 300,
         drilling_cost: 30,
@@ -40,6 +43,7 @@ export const drillClasses: DrillClass[] = [
 
         velocity: 0.04,
         max_depth: 0.9,
+        sample_radius: 0.06,
 
         placement_cost: 500,
         drilling_cost: 50,

@@ -80,7 +80,11 @@ export const reduce = (state: State, action: Action): State => {
                     ) {
                         updatedWell.samples = [
                             ...updatedWell.samples,
-                            updatedWell.bottom.r,
+                            {
+                                r: updatedWell.bottom.r,
+                                radius:
+                                    updatedWell.drill.drillClass.sample_radius,
+                            },
                         ]
                         updatedWell.drill = null
                     }
@@ -138,11 +142,14 @@ export const reduce = (state: State, action: Action): State => {
                     ...well,
                 }
                 if (i == action.index_well) {
-                    updatedWell.drill = null
                     updatedWell.samples = [
                         ...updatedWell.samples,
-                        updatedWell.bottom.r,
+                        {
+                            r: updatedWell.bottom.r,
+                            radius: updatedWell.drill.drillClass.sample_radius,
+                        },
                     ]
+                    updatedWell.drill = null
                 }
                 return updatedWell
             })
