@@ -77,7 +77,7 @@ export const World = ({
             >
                 <Sky size={size * 2.2} />
 
-                <Clouds size={size * 1.5} gameSpeed={gameSpeed} />
+                {false && <Clouds size={size * 1.5} gameSpeed={gameSpeed} />}
 
                 <div
                     className={style.planet}
