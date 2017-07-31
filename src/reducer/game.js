@@ -96,9 +96,13 @@ export const reduce = (state: State, action: Action): State => {
                             ? wannaPump
                             : oils[derrick.oilPocket].oil
 
-                    oils[derrick.oilPocket].oil -= pumped
+                    if (pumped == 0) {
+                        updatedWell.derrick = null
+                    } else {
+                        oils[derrick.oilPocket].oil -= pumped
 
-                    totalEarned += pumped * newValue
+                        totalEarned += pumped * newValue
+                    }
                 }
 
                 return updatedWell
