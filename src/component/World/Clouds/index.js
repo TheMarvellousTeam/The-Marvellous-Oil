@@ -7,7 +7,7 @@ export const Clouds = ({ size, gameSpeed }) =>
         className={style.container}
         style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
     >
-        {[0, 1, 2, 3].map(i =>
+        {[0].map(i =>
             <div
                 key={i}
                 className={style.cloud}
