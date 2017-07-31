@@ -1,0 +1,102 @@
+.container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+}
+.drillStructure,
+.drillHead {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.drillStructureWrapper,
+.drillHeadWrapper {
+    position: absolute;
+    transform-origin: center bottom;
+}
+.drillHeadWrapper {
+    position: absolute;
+    transform-origin: center;
+}
+
+.drillStructureWrapper {
+    width: 46px;
+    height: 99px;
+    bottom: 3px;
+    left: -23px;
+}
+.drillStructure {
+    width: 100%;
+    height: 100%;
+    animation-name: drillStructureAnimation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes drillStructureAnimation {
+    0% {
+        transform: scale(1, 1);
+    }
+    70% {
+        transform: scale(1, 0.94) translate3d(0, 4px, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.drillStructure.type1 {
+    background-image: url(../../../asset/image/petitedrillmerde.png);
+}
+.drillStructure.type2 {
+    background-image: url(../../../asset/image/petitedrillcon.png);
+}
+.drillStructure.type3 {
+    background-image: url(../../../asset/image/petitedrillluxe.png);
+}
+.drillStructure.type4 {
+    background-image: url(../../../asset/image/petitedrill6c.png);
+}
+
+.drillHeadWrapper {
+    width: 33px;
+    height: 74px;
+    top: -37px;
+    left: -16.5px;
+    transition-property: transform;
+    transition-timing-function: linear;
+}
+.drillHead {
+    width: 100%;
+    height: 100%;
+    animation-name: drillHeadAnimation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes drillHeadAnimation {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: translate3d(0, -6px, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.drillHead.type1 {
+    background-image: url(../../../asset/image/visdrillmerde.png);
+}
+.drillHead.type2 {
+    background-image: url(../../../asset/image/visdrillcon.png);
+}
+.drillHead.type3 {
+    background-image: url(../../../asset/image/visdrillluxe.png);
+}
+.drillHead.type4 {
+    background-image: url(../../../asset/image/visdrill6c.png);
+}

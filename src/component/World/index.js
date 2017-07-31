@@ -1,6 +1,7 @@
 import React from 'react'
 import { toPoint, fromPoint } from '../../util/math/pointPolar'
 import { scal } from '../../util/math/point'
+import { Well } from './Well'
 import { Planet } from './Planet'
 import { WildLife } from './WildLife/loop'
 import type { World as World_type } from '../../type'
@@ -89,30 +90,12 @@ export const World = ({
                     <WildLife size={size} gameSpeed={gameSpeed} />
                 </div>
 
-                {world.wells.map((well, i) => {
-                    let position = {
-                        theta: well.bottom.theta,
-                        r: 1,
-                    }
-                    return (
-                        <Well
-                            key={well.bottom.theta}
-                            size={size}
-                            position={position}
-                        />
-                    )
-                })}
-
-                {world.wells.filter(well => well.drill).map((well, i) =>
-                    <Drill
-                        key={well.bottom.theta}
-                        position={well.bottom}
+                {world.wells.map((well, i) =>
+                    <Well
+                        key={i}
                         size={size}
-                        onClick={e =>
-                            onPointerClick(getPointer(width, height, size, e), {
-                                type: 'drill',
-                                index: i,
-                            })}
+                        well={well}
+                        gameSpeed={gameSpeed}
                     />
                 )}
             </div>
@@ -124,23 +107,4 @@ const Sky = ({ size }) =>
     <div
         className={style.sky}
         style={{ width: size, height: size, top: -size / 2, left: -size / 2 }}
-    />
-
-const transform = (position: PointPolar, size: number) => {
-    const u = scal(toPoint(position), size)
-    return `translate3d(${u.x}px,${u.y}px,${0}) rotateZ(${position.theta}rad)`
-}
-
-const Well = ({ size, position, onClick }) =>
-    <div
-        onClick={onClick}
-        className={style.well}
-        style={{ transform: transform(position, size / 2) }}
-    />
-
-const Drill = ({ size, position, onClick }) =>
-    <div
-        onClick={onClick}
-        className={style.drill}
-        style={{ transform: transform(position, size / 2) }}
     />
