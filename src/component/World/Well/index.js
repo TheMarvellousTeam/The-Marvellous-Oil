@@ -1,9 +1,13 @@
 import React from 'react'
 import { toPoint } from '../../../util/math/pointPolar'
+import { drillClasses } from '../../../asset/data/drillClasses'
 import type { PointPolar } from '../../../util/math/pointPolar'
 import type { Well as Well_type } from '../../../type'
 
 import style from './style.css'
+
+const getStyle = drillClass =>
+    `type${1 + (drillClasses.findIndex(x => x === drillClass) || 0)}`
 
 export type Props = {
     well: Well_type,
@@ -32,7 +36,11 @@ export const Well = ({ size, well, gameSpeed }: Props) => {
                     }}
                 >
                     <div
-                        className={style.drillStructure + ' ' + style.type1}
+                        className={
+                            style.drillStructure +
+                            ' ' +
+                            style[getStyle(well.drill.drillClass)]
+                        }
                         style={{
                             animationDuration: `${d / 2}s`,
                         }}
@@ -52,7 +60,11 @@ export const Well = ({ size, well, gameSpeed }: Props) => {
                     }}
                 >
                     <div
-                        className={style.drillHead + ' ' + style.type1}
+                        className={
+                            style.drillHead +
+                            ' ' +
+                            style[getStyle(well.drill.drillClass)]
+                        }
                         style={{
                             animationDuration: `${d}s`,
                         }}

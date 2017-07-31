@@ -86,10 +86,6 @@ export const World = ({
                     <Planet size={planet_size} world={world} />
                 </div>
 
-                <div className={style.wildLife}>
-                    <WildLife size={size} gameSpeed={gameSpeed} />
-                </div>
-
                 {world.wells.map((well, i) =>
                     <Well
                         key={i}
@@ -98,6 +94,10 @@ export const World = ({
                         gameSpeed={gameSpeed}
                     />
                 )}
+
+                <div className={style.wildLife}>
+                    <WildLife size={size} gameSpeed={gameSpeed} />
+                </div>
             </div>
         </div>
     )
