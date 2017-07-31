@@ -76,10 +76,7 @@ export const reduce = (state: State, action: Action): State => {
 
                 return updatedWell
             })
-            console.log(
-                state.game.money + '+' + totalEarned + '-' + totalCost + '='
-            )
-            console.log(state.game.money - totalCost + totalEarned)
+
             return {
                 ...state,
                 game: {
