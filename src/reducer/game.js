@@ -225,7 +225,16 @@ export const reduce = (state: State, action: Action): State => {
                 k = x.type == 'drill' ? k - 1 : k
             })
 
-            return set(state, ['game', 'technologies', 'unlocked', i], true)
+            const drillClass = state.game.technologies.available[i].drillClass
+
+            state = set(state, ['game', 'technologies', 'unlocked', i], true)
+            state = set(
+                state,
+                ['game', 'bank', 'money'],
+                game.bank.money - drillClass.unlock_cost
+            )
+
+            return state
         }
     }
     return state

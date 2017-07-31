@@ -24,6 +24,8 @@ export type DrillClass = {
     sample_radius: number,
 
     //// costs //////
+    unlock_cost: number,
+
     // initial cost
     placement_cost: number,
 
@@ -94,6 +96,5 @@ export type World = {
 export type Technology_Unlock_DrillClass = {
     type: 'drill',
     drillClass: DrillClass,
-    cost: number,
 }
 export type Technology = Technology_Unlock_DrillClass
