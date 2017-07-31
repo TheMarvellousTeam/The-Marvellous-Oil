@@ -77,6 +77,69 @@ exports[`Storyshots DrillShelf default 1`] = `
 </div>
 `;
 
+exports[`Storyshots GameSpeedSlider 0 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    0
+  </div>
+  <input
+    className={undefined}
+    max={3}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={0}
+  />
+</div>
+`;
+
+exports[`Storyshots GameSpeedSlider 1 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    1
+  </div>
+  <input
+    className={undefined}
+    max={3}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={1}
+  />
+</div>
+`;
+
+exports[`Storyshots GameSpeedSlider 5 1`] = `
+<div
+  className="_48bbd99f"
+>
+  <div
+    className={undefined}
+  >
+    5
+  </div>
+  <input
+    className={undefined}
+    max={3}
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="range"
+    value={3}
+  />
+</div>
+`;
+
 exports[`Storyshots World default 1`] = `
 <div
   style={
