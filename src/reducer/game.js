@@ -23,8 +23,8 @@ export const reduce = (state: State, action: Action): State => {
             let proba = 0.5
             if (newValue > 100) {
                 proba = 0.9
-            } else if (newValue < 10) {
-                proba = 0.3
+            } else if (newValue < 25) {
+                proba = 0.1
             }
             if (Math.random() > proba) {
                 newDelta = Math.min(
@@ -38,7 +38,7 @@ export const reduce = (state: State, action: Action): State => {
                 )
             }
 
-            newValue = Math.max(2, Math.floor(newValue * (1 + newDelta / 100)))
+            newValue = Math.max(10, Math.ceil(newValue * (1 + newDelta / 100)))
 
             let world = state.game.world
             let oils = [...world.oilPockets]
@@ -69,6 +69,10 @@ export const reduce = (state: State, action: Action): State => {
                                 oilPocket: i,
                                 derrickClass: drill.drillClass.derrickClass,
                             }
+                            updatedWell.samples = [
+                                ...updatedWell.samples,
+                                updatedWell.bottom.r,
+                            ]
                             updatedWell.drill = null
                         }
                     })
