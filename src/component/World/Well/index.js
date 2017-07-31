@@ -70,6 +70,25 @@ export const Well = ({ size, well, gameSpeed }: Props) => {
                         }}
                     />
                 </div>}
+
+            {well.derrick &&
+                <div
+                    className={style.derrick}
+                    style={{
+                        transform:
+                            `rotateZ(${theta}rad)` +
+                            `translate3d(${size / 2}px,0,0)` +
+                            `rotateZ(90deg)` +
+                            `scale(${scale * 0.6},${scale * 0.6})`,
+                    }}
+                >
+                    <div
+                        className={style.derrickHammer}
+                        style={{
+                            animationDuration: `${d * 2}s`,
+                        }}
+                    />
+                </div>}
         </div>
     )
 }

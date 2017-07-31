@@ -239,6 +239,144 @@ exports[`Storyshots World default 1`] = `
         <canvas />
       </div>
       <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          style={
+            Object {
+              "transform": "rotateZ(4.084070449666731rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          style={
+            Object {
+              "transform": "rotateZ(0.9424777960769379rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_2308d46c"
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
+            }
+          }
+        >
+          <div
+            className="_4cbd7d5f _06ea2792"
+            style={
+              Object {
+                "animationDuration": "0.5s",
+              }
+            }
+          />
+        </div>
+        <div
+          className="_82173eee"
+          style={
+            Object {
+              "transform": "rotateZ(8.168140899333462rad)translate3d(52.5px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
+              "transitionDuration": "0.8s",
+            }
+          }
+        >
+          <div
+            className="_48a756e0 _06ea2792"
+            style={
+              Object {
+                "animationDuration": "1s",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="b5393d59"
+      >
+        <div
+          className="_87b4696d"
+          style={
+            Object {
+              "transform": "rotateZ(11.309733552923255rad)translate3d(175px,0,0)rotateZ(90deg)scale(0.219,0.219)",
+            }
+          }
+        >
+          <div
+            className="a5e77469"
+            style={
+              Object {
+                "animationDuration": "2s",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
         className="_9db51524"
       >
         <div
@@ -390,126 +528,6 @@ exports[`Storyshots World default 1`] = `
           />
         </div>
       </div>
-      <div
-        className="b5393d59"
-      >
-        <div
-          className="_2308d46c"
-          style={
-            Object {
-              "transform": "rotateZ(4.084070449666731rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
-            }
-          }
-        >
-          <div
-            className="_4cbd7d5f _06ea2792"
-            style={
-              Object {
-                "animationDuration": "0.5s",
-              }
-            }
-          />
-        </div>
-        <div
-          className="_82173eee"
-          style={
-            Object {
-              "transform": "rotateZ(4.084070449666731rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
-            }
-          }
-        >
-          <div
-            className="_48a756e0 _06ea2792"
-            style={
-              Object {
-                "animationDuration": "1s",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="b5393d59"
-      >
-        <div
-          className="_2308d46c"
-          style={
-            Object {
-              "transform": "rotateZ(0.9424777960769379rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
-            }
-          }
-        >
-          <div
-            className="_4cbd7d5f _06ea2792"
-            style={
-              Object {
-                "animationDuration": "0.5s",
-              }
-            }
-          />
-        </div>
-        <div
-          className="_82173eee"
-          style={
-            Object {
-              "transform": "rotateZ(0.9424777960769379rad)translate3d(70px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
-            }
-          }
-        >
-          <div
-            className="_48a756e0 _06ea2792"
-            style={
-              Object {
-                "animationDuration": "1s",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="b5393d59"
-      >
-        <div
-          className="_2308d46c"
-          style={
-            Object {
-              "transform": "rotateZ(8.168140899333462rad)translate3d(175px,0.73px,0)rotateZ(90deg)scale(0.365,0.365)",
-            }
-          }
-        >
-          <div
-            className="_4cbd7d5f _06ea2792"
-            style={
-              Object {
-                "animationDuration": "0.5s",
-              }
-            }
-          />
-        </div>
-        <div
-          className="_82173eee"
-          style={
-            Object {
-              "transform": "rotateZ(8.168140899333462rad)translate3d(52.5px,0,0)rotateZ(90deg)scale(0.2701,0.2701)",
-              "transitionDuration": "0.8s",
-            }
-          }
-        >
-          <div
-            className="_48a756e0 _06ea2792"
-            style={
-              Object {
-                "animationDuration": "1s",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="b5393d59"
-      />
     </div>
   </div>
 </div>

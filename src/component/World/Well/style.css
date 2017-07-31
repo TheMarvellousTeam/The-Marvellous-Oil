@@ -100,3 +100,44 @@
 .drillHead.type4 {
     background-image: url(../../../asset/image/visdrill6c.png);
 }
+
+.derrick {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: -275px;
+    left: -120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../../asset/image/piedforeuse.png);
+    transform-origin: 120px 275px;
+}
+.derrickHammer {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: 0px;
+    top: 0px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../../asset/image/marteauforeuse.png);
+    transform-origin: 130px 77px;
+
+    animation-name: hammerAnimation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hammerAnimation {
+    0% {
+        transform: rotateZ(0);
+    }
+    80% {
+        transform: rotateZ(-45deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}

@@ -48,7 +48,7 @@ const world = {
                 r: 0.8,
             },
             drill: null,
-            derrick: null,
+            derrick: true,
             samples: [0.8],
         },
     ],
