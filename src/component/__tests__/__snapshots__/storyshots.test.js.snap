@@ -239,50 +239,6 @@ exports[`Storyshots World default 1`] = `
         }
       />
       <div
-        className="_57e6f5c8"
-        style={
-          Object {
-            "height": 525,
-            "left": -262.5,
-            "top": -262.5,
-            "width": 525,
-          }
-        }
-      >
-        <div
-          className="_051d6be6"
-          style={
-            Object {
-              "animationDuration": "15s",
-            }
-          }
-        />
-        <div
-          className="_051d6be6"
-          style={
-            Object {
-              "animationDuration": "18.5s",
-            }
-          }
-        />
-        <div
-          className="_051d6be6"
-          style={
-            Object {
-              "animationDuration": "22s",
-            }
-          }
-        />
-        <div
-          className="_051d6be6"
-          style={
-            Object {
-              "animationDuration": "25.5s",
-            }
-          }
-        />
-      </div>
-      <div
         className="_2517da5d"
         style={
           Object {
@@ -346,7 +302,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -10
+            -5
           </div>
         </div>
       </div>
@@ -401,7 +357,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -10
+            -5
           </div>
         </div>
       </div>
@@ -456,7 +412,7 @@ exports[`Storyshots World default 1`] = `
           <div
             className="_4a861cbe _568e3102 "
           >
-            -10
+            -5
           </div>
         </div>
       </div>
@@ -485,14 +441,14 @@ exports[`Storyshots World default 1`] = `
           className="_2be7f7c5"
           style={
             Object {
-              "transform": "rotateZ(11.309733552923255rad)translate3d(217px,0,0)rotateZ(-11.309733552923255rad)",
+              "transform": "rotateZ(11.309733552923255rad)translate3d(231px,0,0)rotateZ(-11.309733552923255rad)",
             }
           }
         >
           <div
-            className="_4a861cbe  "
+            className="_4a861cbe  _25f598aa"
           >
-            
+            +
           </div>
         </div>
       </div>
@@ -507,7 +463,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(0deg) saturate(90%)",
-                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.316,0.316)",
+                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.29600000000000004,0.29600000000000004)",
               }
             }
           />
@@ -516,7 +472,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-8deg) saturate(92%)",
-                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.35865882352941175,0.35865882352941175)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.3386588235294118,0.3386588235294118)",
               }
             }
           />
@@ -525,7 +481,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-1.777777777777778deg) saturate(90.44444444444444%)",
-                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.3254797385620915,0.3254797385620915)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.30547973856209154,0.30547973856209154)",
               }
             }
           />
@@ -534,7 +490,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-21.333333333333332deg) saturate(95.33333333333333%)",
-                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.3317568627450981,0.3317568627450981)",
+                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.31175686274509806,0.31175686274509806)",
               }
             }
           />
@@ -543,7 +499,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-26.666666666666664deg) saturate(96.66666666666667%)",
-                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.3601960784313726,0.3601960784313726)",
+                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.34019607843137256,0.34019607843137256)",
               }
             }
           />
@@ -552,7 +508,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-17.77777777777778deg) saturate(94.44444444444444%)",
-                "transform": "rotateZ(3.3000000000000003rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.410797385620915,0.410797385620915)",
+                "transform": "rotateZ(3.3000000000000003rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.39079738562091504,0.39079738562091504)",
               }
             }
           />
@@ -561,7 +517,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-34.66666666666667deg) saturate(98.66666666666667%)",
-                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.4028549019607844,0.4028549019607844)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.3828549019607844,0.3828549019607844)",
               }
             }
           />
@@ -570,7 +526,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-37.333333333333336deg) saturate(99.33333333333333%)",
-                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.31907450980392155,0.31907450980392155)",
+                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.2990745098039216,0.2990745098039216)",
               }
             }
           />
@@ -579,7 +535,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-25.77777777777778deg) saturate(96.44444444444444%)",
-                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.35545620915032683,0.35545620915032683)",
+                "transform": "rotateZ(4.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.3354562091503268,0.3354562091503268)",
               }
             }
           />
@@ -588,7 +544,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(0deg) saturate(90%)",
-                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.316,0.316)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.29600000000000004,0.29600000000000004)",
               }
             }
           />
@@ -597,7 +553,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(0deg) saturate(90%)",
-                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.316,0.316)",
+                "transform": "rotateZ(5.1000000000000005rad) translate3d(175px,0,0) rotateZ(94.25635973338558deg) scale(0.29600000000000004,0.29600000000000004)",
               }
             }
           />
@@ -606,7 +562,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-25.77777777777778deg) saturate(96.44444444444444%)",
-                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.35545620915032683,0.35545620915032683)",
+                "transform": "rotateZ(0.6000000000000001rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.3354562091503268,0.3354562091503268)",
               }
             }
           />
@@ -615,7 +571,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-37.333333333333336deg) saturate(99.33333333333333%)",
-                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.31907450980392155,0.31907450980392155)",
+                "transform": "rotateZ(0rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.2990745098039216,0.2990745098039216)",
               }
             }
           />
@@ -624,7 +580,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-34.66666666666667deg) saturate(98.66666666666667%)",
-                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.4028549019607844,0.4028549019607844)",
+                "transform": "rotateZ(0.2rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.3828549019607844,0.3828549019607844)",
               }
             }
           />
@@ -633,7 +589,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-17.77777777777778deg) saturate(94.44444444444444%)",
-                "transform": "rotateZ(3.5rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.410797385620915,0.410797385620915)",
+                "transform": "rotateZ(3.5rad) translate3d(175px,0,0) rotateZ(94.25635973338484deg) scale(0.39079738562091504,0.39079738562091504)",
               }
             }
           />
@@ -642,7 +598,7 @@ exports[`Storyshots World default 1`] = `
             style={
               Object {
                 "filter": "hue-rotate(-26.666666666666664deg) saturate(96.66666666666667%)",
-                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.3601960784313726,0.3601960784313726)",
+                "transform": "rotateZ(3.7rad) translate3d(175px,0,0) rotateZ(94.2563597333841deg) scale(0.34019607843137256,0.34019607843137256)",
               }
             }
           />
